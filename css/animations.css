@@ -1,0 +1,408 @@
+/* ============================================
+   MagicArt Fest - Animations (Enhanced)
+   ============================================ */
+
+/* ---- Scroll Reveal Animations ---- */
+[data-animate] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                filter 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    filter: blur(4px);
+    will-change: opacity, transform, filter;
+}
+
+[data-animate="fade-up"] {
+    transform: translateY(50px);
+}
+
+[data-animate="fade-down"] {
+    transform: translateY(-50px);
+}
+
+[data-animate="fade-right"] {
+    transform: translateX(-60px);
+}
+
+[data-animate="fade-left"] {
+    transform: translateX(60px);
+}
+
+[data-animate="zoom-in"] {
+    transform: scale(0.85);
+}
+
+[data-animate="zoom-out"] {
+    transform: scale(1.1);
+}
+
+[data-animate="rotate-in"] {
+    transform: rotate(-5deg) translateY(40px);
+}
+
+[data-animate].in-view {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    filter: blur(0);
+}
+
+/* Delay variants */
+[data-delay="100"] { transition-delay: 0.1s; }
+[data-delay="200"] { transition-delay: 0.2s; }
+[data-delay="300"] { transition-delay: 0.3s; }
+[data-delay="400"] { transition-delay: 0.4s; }
+[data-delay="500"] { transition-delay: 0.5s; }
+[data-delay="600"] { transition-delay: 0.6s; }
+[data-delay="800"] { transition-delay: 0.8s; }
+
+/* ---- Stagger Children Animation ---- */
+.stagger-children > * {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(3px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                filter 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stagger-children.in-view > *:nth-child(1) { transition-delay: 0.05s; }
+.stagger-children.in-view > *:nth-child(2) { transition-delay: 0.12s; }
+.stagger-children.in-view > *:nth-child(3) { transition-delay: 0.19s; }
+.stagger-children.in-view > *:nth-child(4) { transition-delay: 0.26s; }
+.stagger-children.in-view > *:nth-child(5) { transition-delay: 0.33s; }
+.stagger-children.in-view > *:nth-child(6) { transition-delay: 0.40s; }
+.stagger-children.in-view > *:nth-child(7) { transition-delay: 0.47s; }
+.stagger-children.in-view > *:nth-child(8) { transition-delay: 0.54s; }
+
+.stagger-children.in-view > * {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+/* ---- Shimmer Effect ---- */
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.shimmer {
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(212, 175, 55, 0.08) 50%,
+        transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+/* ---- Glow Pulse ---- */
+@keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.1); }
+    50% { box-shadow: 0 0 50px rgba(212, 175, 55, 0.3), 0 0 80px rgba(212, 175, 55, 0.1); }
+}
+
+/* ---- Section Title Glow ---- */
+@keyframes titleGlow {
+    0%, 100% { text-shadow: 0 0 20px rgba(212, 175, 55, 0); }
+    50% { text-shadow: 0 0 30px rgba(212, 175, 55, 0.15), 0 0 60px rgba(212, 175, 55, 0.05); }
+}
+
+.section-title .accent {
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+/* ---- Text Gradient Animation ---- */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.gradient-text {
+    background: linear-gradient(270deg,
+        var(--color-gold),
+        var(--color-purple),
+        var(--color-gold)
+    );
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 4s ease infinite;
+}
+
+/* ---- Floating Animation ---- */
+@keyframes floatGentle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+/* ---- Particle Dots ---- */
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1);
+        opacity: 0;
+    }
+}
+
+/* ---- Card Hover Glow ---- */
+.feature-card::after,
+.category-card::after,
+.ticket-card::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg,
+        rgba(212, 175, 55, 0.2),
+        transparent 40%,
+        transparent 60%,
+        rgba(142, 68, 236, 0.15)
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.feature-card:hover::after,
+.category-card:hover::after,
+.ticket-card:hover::after {
+    opacity: 1;
+}
+
+/* ---- Image Reveal Animation ---- */
+.img-reveal {
+    position: relative;
+    overflow: hidden;
+}
+
+.img-reveal::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--color-gold);
+    z-index: 2;
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.img-reveal.in-view::before {
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+/* ---- Magnetic Button Effect ---- */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary .btn-ripple {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* ---- Section Divider ---- */
+.about::after,
+.competition::after,
+.tickets::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+}
+
+/* ---- Timeline Animation ---- */
+.timeline-item {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.timeline-item.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ---- Loading Skeleton ---- */
+@keyframes skeletonPulse {
+    0% { background-position: -200px 0; }
+    100% { background-position: 200px 0; }
+}
+
+.skeleton {
+    background: linear-gradient(90deg,
+        var(--color-bg-card) 0%,
+        var(--color-bg-card-hover) 50%,
+        var(--color-bg-card) 100%
+    );
+    background-size: 400px 100%;
+    animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+/* ---- Noise Texture Overlay ---- */
+.noise-overlay::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    opacity: 0.015;
+    pointer-events: none;
+    z-index: 9000;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+}
+
+/* ---- Artist Card Animations ---- */
+@keyframes artistCardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+        filter: blur(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+.artist-card-anim {
+    animation: artistCardEnter 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ---- Gallery Hover Effects ---- */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
+
+.gallery-item img {
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                filter 0.6s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.1);
+}
+
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,10,11,0.7) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+/* ---- Scroll-triggered Section Line ---- */
+.section-line {
+    transform: scaleX(0);
+    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+}
+
+.section-header.in-view .section-line,
+[data-animate].in-view .section-line {
+    transform: scaleX(1);
+}
+
+/* ---- Pulse Ring for FISM badge ---- */
+@keyframes pulseRing {
+    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+    70% { box-shadow: 0 0 0 12px rgba(212, 175, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+.hero-fism-badge {
+    animation: pulseRing 2.5s ease-in-out infinite;
+    border-radius: 4px;
+}
+
+/* ---- Smooth hover transitions on all interactive ---- */
+.feature-card,
+.category-card,
+.ticket-card,
+.artist-chip,
+.contact-method,
+.faq-question {
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ---- Smooth Hover Transition for all interactive elements ---- */
+.feature-card,
+.category-card,
+.ticket-card,
+.timeline-card,
+.contact-method,
+.social-links a,
+.faq-question {
+    position: relative;
+}
+
+/* ---- Ticket Card Featured Glow ---- */
+.ticket-card.featured {
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* ---- Gold Line Animation ---- */
+@keyframes lineGrow {
+    from { width: 0; }
+    to { width: 60px; }
+}
+
+.section-line.in-view {
+    animation: lineGrow 0.8s ease forwards;
+}
+
+/* ---- Stagger children animation ---- */
+.stagger-children > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stagger-children.in-view > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: none; }
+.stagger-children.in-view > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: none; }
+.stagger-children.in-view > *:nth-child(3) { transition-delay: 0.15s; opacity: 1; transform: none; }
+.stagger-children.in-view > *:nth-child(4) { transition-delay: 0.2s; opacity: 1; transform: none; }
+.stagger-children.in-view > *:nth-child(5) { transition-delay: 0.25s; opacity: 1; transform: none; }
+.stagger-children.in-view > *:nth-child(6) { transition-delay: 0.3s; opacity: 1; transform: none; }

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "magicart-site",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["C:/Users/DMD/AppData/Roaming/npm/node_modules/serve/build/main.js", "-l", "3000", "D:/SITE_Magician"],
+      "port": 3000
+    }
+  ]
+}

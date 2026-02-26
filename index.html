@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MagicArt Fest 2027 – Festivalul Internațional de Magie din România</title>
+    <meta name="description" content="MagicArt Fest – Cel mai mare festival internațional de magie din România. Februarie 2027, Buhuși, Bacău. Gala Show, Competiție FISM, Workshops și magie la cel mai înalt nivel.">
+    <meta name="keywords" content="magic festival, festival magie, MagicArt, Buhuși, spectacol magie, gala show, competiție magie, FISM">
+    <meta property="og:title" content="MagicArt Fest 2027 – Festivalul Internațional de Magie">
+    <meta property="og:description" content="Trăiește magia la cel mai înalt nivel. Februarie 2027, Buhuși, Bacău.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://magicartfest.eu">
+    <meta property="og:image" content="https://magicartfest.eu/images/hero-background.jpg">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎩</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="magic-circle">
+                <div class="circle-ring"></div>
+                <div class="circle-ring"></div>
+                <div class="circle-ring"></div>
+            </div>
+            <img src="images/logo-ama.png" alt="MagicArt" class="preloader-logo">
+        </div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <header id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <img src="images/logo-ama.png" alt="MagicArt Fest" class="nav-logo-img">
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#hero" class="nav-link active">Acasă</a>
+                <a href="#about" class="nav-link">Despre</a>
+                <a href="#gala" class="nav-link">Gala Show</a>
+                <a href="#competition" class="nav-link">Competiție</a>
+                <a href="#edition2026" class="nav-link">Ediția 2026</a>
+                <a href="#tickets" class="nav-link">Bilete</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="#tickets" class="nav-cta">Cumpără Bilete</a>
+                <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-nav">
+            <a href="#hero" class="mobile-link">Acasă</a>
+            <a href="#about" class="mobile-link">Despre</a>
+            <a href="#gala" class="mobile-link">Gala Show</a>
+            <a href="#competition" class="mobile-link">Competiție</a>
+            <a href="#edition2026" class="mobile-link">Ediția 2026</a>
+            <a href="#tickets" class="mobile-link">Bilete</a>
+            <a href="#faq" class="mobile-link">FAQ</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </nav>
+    </div>
+
+    <!-- ========== HERO ========== -->
+    <section id="hero" class="hero">
+        <div class="hero-bg-image" style="background-image: url('images/hero-background.jpg')"></div>
+        <canvas id="heroCanvas" class="hero-canvas"></canvas>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge" data-animate="fade-down">
+                <span class="badge-line"></span>
+                <span>Ediția 2027</span>
+                <span class="badge-line"></span>
+            </div>
+            <div class="hero-logo-wrapper" data-animate="fade-up">
+                <img src="images/header-magicart.png" alt="MagicArt Fest Romania" class="hero-logo-img">
+            </div>
+            <p class="hero-subtitle" data-animate="fade-up" data-delay="200">
+                Festivalul Internațional de Magie din România
+            </p>
+            <div class="hero-info" data-animate="fade-up" data-delay="400">
+                <div class="hero-info-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <span>Februarie 2027</span>
+                </div>
+                <div class="hero-info-divider"></div>
+                <div class="hero-info-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Buhuși, Bacău</span>
+                </div>
+                <div class="hero-info-divider"></div>
+                <div class="hero-info-item">
+                    <img src="images/whatsapp-image.png" alt="FISM Qualified Contest" class="hero-fism-badge">
+                </div>
+            </div>
+            <div class="hero-buttons" data-animate="fade-up" data-delay="600">
+                <a href="#tickets" class="btn btn-primary">
+                    <span>Rezervă Locul Tău</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <a href="#edition2026" class="btn btn-outline">
+                    <span>Vezi Ediția 2026</span>
+                </a>
+            </div>
+        </div>
+        <div class="hero-scroll" data-animate="fade-up" data-delay="800">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+
+        <!-- Floating elements -->
+        <div class="hero-float hero-float-1">✦</div>
+        <div class="hero-float hero-float-2">✧</div>
+        <div class="hero-float hero-float-3">⬥</div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Descoperă</span>
+                <h2 class="section-title">Ce este <span class="accent">MagicArt</span> Fest?</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text" data-animate="fade-right">
+                    <div class="about-logo-badge">
+                        <img src="images/logo-ama.png" alt="Asociația Magic Art - A.M.A. - Since 2005" class="about-ama-logo">
+                    </div>
+                    <p class="about-lead">
+                        Trăiește magia și emoția unui show incendiar, fără precedent în România.
+                        MagicArt Fest reunește cei mai talentați magicieni din lume într-un
+                        spectacol de neuitat.
+                    </p>
+                    <p>
+                        Organizat de <strong>Asociația Magic Art (A.M.A.)</strong> din 2005,
+                        festivalul este un <strong>concurs calificat FISM</strong> – cea mai
+                        prestigioasă organizație mondială de magie. Timp de trei zile, Buhuși devine
+                        capitala magiei europene cu competiții internaționale, gala show cu artiști
+                        de talie mondială, workshops interactive și momente de pură fascinație.
+                    </p>
+                    <div class="about-badges">
+                        <div class="about-badge-item">
+                            <img src="images/whatsapp-image.png" alt="FISM Qualified Contest" class="fism-logo">
+                            <span>FISM Qualified Contest</span>
+                        </div>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="3">0</span>
+                            <span class="stat-label">Zile de Magie</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="15">0</span>
+                            <span class="stat-label">Artiști Internaționali</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="500">0</span>
+                            <span class="stat-label">Spectatori</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-features" data-animate="fade-left">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        </div>
+                        <h3>Gala Show</h3>
+                        <p>Un spectacol de excepție cu magicieni de renume mondial pe scena din Buhuși.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"></path><circle cx="12" cy="12" r="10"></circle></svg>
+                        </div>
+                        <h3>Competiție FISM</h3>
+                        <p>Concurs calificat FISM cu magicieni din întreaga lume în categoriile Stage, Close-Up și Junior.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3>Workshops</h3>
+                        <p>Învață trucuri direct de la maeștrii magiei în sesiuni exclusive.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        </div>
+                        <h3>Magic Shop</h3>
+                        <p>Descoperă trucuri, accesorii și recuzită profesională în magazinul nostru.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== GALA SHOW ========== -->
+    <section id="gala" class="section gala">
+        <div class="gala-bg-pattern"></div>
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Evenimentul Principal</span>
+                <h2 class="section-title">International <span class="accent">Gala Show</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="gala-showcase">
+                <div class="gala-main" data-animate="fade-up">
+                    <div class="gala-image-wrapper">
+                        <div class="gala-image">
+                            <img src="images/event-photo-1.jpg" alt="MagicArt Fest Gala Show 2027" class="gala-img">
+                        </div>
+                        <div class="gala-date-badge">
+                            <span class="date-month">FEB</span>
+                            <span class="date-year">2027</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gala-details" data-animate="fade-left">
+                    <h3 class="gala-subtitle">Un spectacol unic în România</h3>
+                    <p class="gala-description">
+                        Susținut de magicieni de talie mondială, Gala Show MagicArt Fest
+                        este punctul culminant al festivalului. O seară în care imposibilul
+                        devine realitate, iar magia transcende imaginația.
+                    </p>
+                    <div class="gala-info-list">
+                        <div class="gala-info-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            <div>
+                                <strong>Când</strong>
+                                <span>Februarie 2027 — datele exacte vor fi anunțate</span>
+                            </div>
+                        </div>
+                        <div class="gala-info-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <div>
+                                <strong>Locația</strong>
+                                <span>Casa de Cultură "Elisabeta Bostan", Buhuși</span>
+                            </div>
+                        </div>
+                        <div class="gala-info-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+                            <div>
+                                <strong>Vârstă</strong>
+                                <span>Recomandat 6+</span>
+                            </div>
+                        </div>
+                        <div class="gala-info-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                            <div>
+                                <strong>Preț</strong>
+                                <span>De la 80 Lei — Early Bird disponibil!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#tickets" class="btn btn-primary">
+                        <span>Cumpără Bilete</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MARQUEE ========== -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>✦ MAGIE</span>
+                <span>✦ ILUZIE</span>
+                <span>✦ FASCINAȚIE</span>
+                <span>✦ SPECTACOL</span>
+                <span>✦ MISTER</span>
+                <span>✦ ARTĂ</span>
+                <span>✦ FISM</span>
+                <span>✦ MAGIE</span>
+                <span>✦ ILUZIE</span>
+                <span>✦ FASCINAȚIE</span>
+                <span>✦ SPECTACOL</span>
+                <span>✦ MISTER</span>
+                <span>✦ ARTĂ</span>
+                <span>✦ FISM</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== COMPETITION ========== -->
+    <section id="competition" class="section competition">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Concurs FISM</span>
+                <h2 class="section-title">Competiția <span class="accent">Internațională</span></h2>
+                <div class="section-line"></div>
+                <p class="section-description">
+                    Concurs calificat FISM — deschis tuturor magicienilor, amatori sau profesioniști, fără limită de vârstă.
+                    Juriul internațional format din 4 membri evaluează actele de 5-10 minute.
+                </p>
+            </div>
+            <div class="competition-categories">
+                <div class="category-card" data-animate="fade-up" data-delay="0">
+                    <div class="category-number">01</div>
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="2" width="20" height="20" rx="2"></rect><path d="M7 12l5 5 5-5M12 7v10"></path></svg>
+                    </div>
+                    <h3>Stage Magic</h3>
+                    <p>Magie de scenă cu efecte vizuale spectaculoase pentru publicul larg.</p>
+                    <div class="category-line"></div>
+                </div>
+                <div class="category-card" data-animate="fade-up" data-delay="150">
+                    <div class="category-number">02</div>
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                    </div>
+                    <h3>Close-Up Magic</h3>
+                    <p>Magie de aproape, trucuri cu cărți, monede și obiecte de zi cu zi.</p>
+                    <div class="category-line"></div>
+                </div>
+                <div class="category-card" data-animate="fade-up" data-delay="300">
+                    <div class="category-number">03</div>
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                    </div>
+                    <h3>Junior</h3>
+                    <p>Categoria specială pentru tinerii magicieni sub 16 ani.</p>
+                    <div class="category-line"></div>
+                </div>
+            </div>
+            <div class="competition-cta" data-animate="fade-up">
+                <p>Premii: Trofee ale festivalului și premii speciale ale juriului</p>
+                <a href="#contact" class="btn btn-outline">Înscrie-te Acum</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EDITION 2026 (PAST) ========== -->
+    <section id="edition2026" class="section edition-past">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Retrospectivă</span>
+                <h2 class="section-title">Ediția <span class="accent">2026</span></h2>
+                <div class="section-line"></div>
+                <p class="section-description">
+                    Pe 5-7 februarie 2026, MagicArt Fest a scris istorie la Buhuși.
+                    Magie la cel mai înalt nivel, artiști internaționali extraordinari și momente de neuitat.
+                </p>
+            </div>
+
+            <div class="past-edition-showcase" data-animate="fade-up">
+                <div class="past-poster img-reveal">
+                    <img src="images/gala-show.jpeg" alt="MagicArt Fest 2026 - International Gala Show">
+                    <div class="past-poster-overlay">
+                        <span class="past-label">Gala Show 2026</span>
+                    </div>
+                </div>
+                <div class="past-details">
+                    <h3 class="past-subtitle">International Gala Show 2026</h3>
+                    <p class="past-description">
+                        Un spectacol memorabil cu magicieni de talie mondială care au încântat
+                        publicul din Buhuși pe 7 februarie 2026, la Casa de Cultură "Elisabeta Bostan".
+                    </p>
+                    <div class="past-stats-row">
+                        <div class="past-stat">
+                            <span class="past-stat-num" data-count="7">0</span>
+                            <span class="past-stat-label">Artiști</span>
+                        </div>
+                        <div class="past-stat">
+                            <span class="past-stat-num" data-count="5">0</span>
+                            <span class="past-stat-label">Țări</span>
+                        </div>
+                        <div class="past-stat">
+                            <span class="past-stat-num" data-count="3">0</span>
+                            <span class="past-stat-label">Zile</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artists Grid with Photos -->
+            <div class="past-artists-section" data-animate="fade-up">
+                <h3 class="past-artists-title">Artiștii Gala Show 2026</h3>
+                <div class="artists-photo-grid stagger-children">
+                    <div class="artist-photo-card">
+                        <div class="artist-photo">
+                            <img src="images/gabriel-gascon.png" alt="Gabriel Gascon" loading="lazy">
+                        </div>
+                        <div class="artist-photo-info">
+                            <span class="artist-name">Gabriel Gascon</span>
+                            <span class="artist-country">Chile</span>
+                        </div>
+                    </div>
+                    <div class="artist-photo-card">
+                        <div class="artist-photo">
+                            <img src="images/jeki-yoo.png" alt="Jeki Yoo" loading="lazy">
+                        </div>
+                        <div class="artist-photo-info">
+                            <span class="artist-name">Jeki Yoo</span>
+                            <span class="artist-country">Coreea de Sud / SUA</span>
+                        </div>
+                    </div>
+                    <div class="artist-photo-card">
+                        <div class="artist-photo">
+                            <img src="images/kimoon-do.png" alt="Kimoon Do" loading="lazy">
+                        </div>
+                        <div class="artist-photo-info">
+                            <span class="artist-name">Kimoon Do</span>
+                            <span class="artist-country">Coreea de Sud</span>
+                        </div>
+                    </div>
+                    <div class="artist-photo-card">
+                        <div class="artist-photo">
+                            <img src="images/piksi.png" alt="Piksi" loading="lazy">
+                        </div>
+                        <div class="artist-photo-info">
+                            <span class="artist-name">Piksi</span>
+                            <span class="artist-country">Serbia</span>
+                        </div>
+                    </div>
+                    <div class="artist-photo-card">
+                        <div class="artist-photo">
+                            <img src="images/christianis.png" alt="Christianis" loading="lazy">
+                        </div>
+                        <div class="artist-photo-info">
+                            <span class="artist-name">Christianis</span>
+                            <span class="artist-country">România</span>
+                        </div>
+                    </div>
+                    <div class="artist-photo-card">
+                        <div class="artist-photo">
+                            <img src="images/eduard-bianca.png" alt="Eduard și Bianca" loading="lazy">
+                        </div>
+                        <div class="artist-photo-info">
+                            <span class="artist-name">Eduard și Bianca</span>
+                            <span class="artist-country">România</span>
+                        </div>
+                    </div>
+                    <div class="artist-photo-card">
+                        <div class="artist-photo">
+                            <img src="images/teatro-blu-magic.png" alt="Teatro Blu Magic" loading="lazy">
+                        </div>
+                        <div class="artist-photo-info">
+                            <span class="artist-name">Teatro Blu Magic</span>
+                            <span class="artist-country">România</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Photo Gallery -->
+            <div class="event-gallery" data-animate="fade-up">
+                <h3 class="gallery-title">Momente din Ediția 2026</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/gallery-1.jpg" alt="MagicArt Fest 2026 — Spectacol pe scenă" loading="lazy">
+                        <div class="gallery-caption">
+                            <span>Pe Scenă</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gallery-2.jpg" alt="MagicArt Fest 2026 — Show de magie" loading="lazy">
+                        <div class="gallery-caption">
+                            <span>Show Live</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gallery-3.jpg" alt="MagicArt Fest 2026 — Artiștii pe scenă" loading="lazy">
+                        <div class="gallery-caption">
+                            <span>Artiștii în Acțiune</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gallery-4.jpg" alt="MagicArt Fest 2026 — Gala Show" loading="lazy">
+                        <div class="gallery-caption">
+                            <span>Gala Show 2026</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gallery-5.jpg" alt="MagicArt Fest 2026 — Momente magice" loading="lazy">
+                        <div class="gallery-caption">
+                            <span>Momente Magice</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gallery-6.jpg" alt="MagicArt Fest 2026 — Magie live" loading="lazy">
+                        <div class="gallery-caption">
+                            <span>Magie Live</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TICKETS ========== -->
+    <section id="tickets" class="section tickets">
+        <div class="tickets-bg"></div>
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Bilete 2027</span>
+                <h2 class="section-title">Alege-ți <span class="accent">Experiența</span></h2>
+                <div class="section-line"></div>
+                <p class="section-description">
+                    Biletele Early Bird sunt disponibile pentru ediția 2027. Profită de prețurile speciale!
+                </p>
+            </div>
+            <div class="tickets-grid">
+                <div class="ticket-card" data-animate="fade-up" data-delay="0">
+                    <div class="ticket-header">
+                        <span class="ticket-type">Standard</span>
+                        <div class="ticket-price">
+                            <span class="price-amount">80</span>
+                            <span class="price-currency">Lei</span>
+                        </div>
+                    </div>
+                    <div class="ticket-body">
+                        <ul class="ticket-features">
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Acces Gala Show
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Loc în sală
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Acces Magic Shop
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ticket-footer">
+                        <a href="#contact" class="btn btn-outline btn-full">Cumpără</a>
+                    </div>
+                </div>
+                <div class="ticket-card featured" data-animate="fade-up" data-delay="150">
+                    <div class="ticket-badge">Popular</div>
+                    <div class="ticket-header">
+                        <span class="ticket-type">Premium</span>
+                        <div class="ticket-price">
+                            <span class="price-amount">150</span>
+                            <span class="price-currency">Lei</span>
+                        </div>
+                    </div>
+                    <div class="ticket-body">
+                        <ul class="ticket-features">
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Acces Gala Show
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Loc premium — rândurile 1-5
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Acces Magic Shop
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Meet & Greet cu artiștii
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ticket-footer">
+                        <a href="#contact" class="btn btn-primary btn-full">Cumpără</a>
+                    </div>
+                </div>
+                <div class="ticket-card" data-animate="fade-up" data-delay="300">
+                    <div class="ticket-header">
+                        <span class="ticket-type">VIP</span>
+                        <div class="ticket-price">
+                            <span class="price-amount">250</span>
+                            <span class="price-currency">Lei</span>
+                        </div>
+                    </div>
+                    <div class="ticket-body">
+                        <ul class="ticket-features">
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Acces Gala Show
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Loc VIP — primul rând
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Acces complet 3 zile
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Meet & Greet exclusiv
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Cadou surpriză MagicArt
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ticket-footer">
+                        <a href="#contact" class="btn btn-outline btn-full">Cumpără</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section id="faq" class="section faq">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Întrebări</span>
+                <h2 class="section-title">Întrebări <span class="accent">Frecvente</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="faq-list" data-animate="fade-up">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>De la ce vârstă pot participa la spectacol?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Spectacolul este recomandat pentru persoane cu vârsta de 6 ani și peste. Copiii trebuie însoțiți de un adult.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Când se deschid porțile?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Porțile se deschid cu 1 oră înainte de începerea fiecărui spectacol.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Se pot cumpăra bilete la intrare?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Da, un număr limitat de bilete vor fi disponibile la intrare, în funcție de locurile rămase. Recomandăm achiziționarea online pentru a vă asigura locul.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Pot alege locul în sală?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Da, la achiziționarea biletelor online puteți selecta locul preferat din harta sălii.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Se poate filma sau fotografia în timpul spectacolului?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Fotografierea și filmarea sunt interzise în timpul spectacolului pentru a păstra misterul magiei și a respecta drepturile artiștilor.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Ce este FISM Qualified Contest?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>FISM (Fédération Internationale des Sociétés Magiques) este cea mai prestigioasă organizație mondială de magie. MagicArt Fest este un concurs calificat FISM, ceea ce înseamnă că câștigătorii se pot califica la campionatele mondiale de magie.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Contact</span>
+                <h2 class="section-title">Ia <span class="accent">Legătura</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info" data-animate="fade-right">
+                    <h3>Informații de Contact</h3>
+                    <p>Pentru întrebări, rezervări sau înscrieri la competiție, nu ezita să ne contactezi.</p>
+                    <div class="contact-methods">
+                        <a href="https://wa.me/40729290290" class="contact-method" target="_blank" rel="noopener">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </div>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <span>+40 729 290 290</span>
+                            </div>
+                        </a>
+                        <a href="mailto:festmagic@yahoo.com" class="contact-method">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </div>
+                            <div>
+                                <strong>Email</strong>
+                                <span>festmagic@yahoo.com</span>
+                            </div>
+                        </a>
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <div>
+                                <strong>Locația</strong>
+                                <span>Strada Republicii, Buhuși 605100, Bacău</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <h4>Urmărește-ne</h4>
+                        <div class="social-links">
+                            <a href="https://facebook.com/magicart.fest" target="_blank" rel="noopener" aria-label="Facebook">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            </a>
+                            <a href="https://instagram.com/magicart.fest" target="_blank" rel="noopener" aria-label="Instagram">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                            </a>
+                            <a href="https://youtube.com/@magicart.fest" target="_blank" rel="noopener" aria-label="YouTube">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                            </a>
+                            <a href="https://tiktok.com/@magicart.fest" target="_blank" rel="noopener" aria-label="TikTok">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map" data-animate="fade-left">
+                    <div class="map-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2714.5!2d26.7063!3d46.7156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b55d0d34138b35%3A0x3c8cd20e1c1b1b1!2sBuhu%C8%99i%2C+Bac%C4%83u!5e0!3m2!1sro!2sro!4v1"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            title="Locația MagicArt Fest">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#hero" class="footer-logo-link">
+                        <img src="images/logo-ama.png" alt="Asociația Magic Art" class="footer-logo-img">
+                    </a>
+                    <p>Asociația Magic Art (A.M.A.) — Since 2005<br>Festivalul Internațional de Magie din România</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Navigare</h4>
+                        <a href="#about">Despre</a>
+                        <a href="#gala">Gala Show</a>
+                        <a href="#competition">Competiție</a>
+                        <a href="#edition2026">Ediția 2026</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Informații</h4>
+                        <a href="#tickets">Bilete</a>
+                        <a href="#faq">FAQ</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MagicArt Fest — Asociația Magic Art (A.M.A.). Toate drepturile rezervate.</p>
+                <div class="footer-social">
+                    <a href="https://facebook.com/magicart.fest" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+                    <a href="https://instagram.com/magicart.fest" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+                    <a href="https://youtube.com/@magicart.fest" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+                    <a href="https://tiktok.com/@magicart.fest" target="_blank" rel="noopener" aria-label="TikTok">TK</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/particles.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

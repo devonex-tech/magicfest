@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(test -d \"D:/SITE_Magician\")",
+      "WebFetch(domain:magicartfest.eu)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npx --version)",
+      "Bash(npm ls -g serve)",
+      "Bash(npm install -g serve)",
+      "Bash(curl -L -o logo-ama.png \"https://magicartfest.eu/wp-content/uploads/2025/10/Logo-AMA-1014x1024.png\")",
+      "Bash(curl -L -o header-magicart.png \"https://magicartfest.eu/wp-content/uploads/2025/12/Header_MagicArt_Fest_Mobile-1024x392.png\")",
+      "Bash(curl -L -o header-magicart-02.png \"https://magicartfest.eu/wp-content/uploads/2025/12/Header_MagicArt_Fest_Mobile_02.png\")",
+      "Bash(curl -L -o gala-show.jpeg \"https://magicartfest.eu/wp-content/uploads/2026/01/Image-1-718x1024.jpeg\")",
+      "Bash(curl -L -o hero-background.jpg \"https://magicartfest.eu/wp-content/uploads/2025/11/HeroBackground.jpg\")",
+      "Bash(curl -L -o whatsapp-image.png \"https://magicartfest.eu/wp-content/uploads/2025/10/Imagen-de-WhatsApp-2025-12-05-a-las-00.02.png\")",
+      "Bash(curl -L -o night-sky.gif \"https://magicartfest.eu/wp-content/uploads/2026/01/night-sky-space-GIF-by-Erica-Anderson.gif\")"
+    ]
+  }
+}
