@@ -81,15 +81,15 @@ html {
 }
 
 .nav-logo-img {
-    height: 64px;
+    height: 88px;
 }
 
 .navbar {
-    padding: 14px 0;
+    padding: 10px 0;
 }
 
 .navbar.scrolled .nav-logo-img {
-    height: 50px;
+    height: 62px;
 }
 
 .nav-menu {
