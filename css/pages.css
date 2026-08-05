@@ -80,6 +80,18 @@ html {
     gap: 20px;
 }
 
+.nav-logo-img {
+    height: 64px;
+}
+
+.navbar {
+    padding: 14px 0;
+}
+
+.navbar.scrolled .nav-logo-img {
+    height: 50px;
+}
+
 .nav-menu {
     gap: 24px;
     flex-wrap: nowrap;
