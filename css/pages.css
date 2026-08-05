@@ -75,6 +75,44 @@ html {
     color: var(--color-gold);
 }
 
+/* ---- Navbar: aliniere & spațiere pentru meniul extins ---- */
+.nav-container {
+    gap: 20px;
+}
+
+.nav-menu {
+    gap: 24px;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.nav-link {
+    white-space: nowrap;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    line-height: 1;
+    padding: 8px 0;
+}
+
+.nav-cta {
+    white-space: nowrap;
+    padding: 12px 36px;
+    justify-content: center;
+}
+
+/* Sub 1280px meniul complet nu mai încape — trecem pe burger */
+@media (max-width: 1279px) {
+    .nav-menu,
+    .nav-cta,
+    .lang-switcher {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+}
+
 /* ---- Nav dropdown ---- */
 .nav-item-dropdown {
     position: relative;
@@ -189,35 +227,38 @@ html {
 
 /* ---- Silhouette cards (2027 TBA) ---- */
 .silhouette-figure {
-    width: 100%;
-    aspect-ratio: 3 / 4;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     background:
-        radial-gradient(ellipse at 50% 30%, rgba(142, 68, 236, 0.18), transparent 65%),
-        linear-gradient(180deg, var(--color-bg-card), var(--color-bg-light));
-    overflow: hidden;
+        radial-gradient(circle at 50% 35%, rgba(212, 175, 55, 0.18), transparent 60%),
+        radial-gradient(circle at 50% 80%, rgba(142, 68, 236, 0.25), transparent 75%),
+        linear-gradient(180deg, #23232B, var(--color-bg-light));
     position: relative;
 }
 
 .silhouette-figure svg {
-    width: 72%;
+    width: 88%;
     height: auto;
     display: block;
-    filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.12));
 }
 
 .silhouette-figure .silhouette-q {
     position: absolute;
-    top: 26%;
+    top: 34%;
     left: 50%;
     transform: translateX(-50%);
     font-family: var(--font-display);
-    font-size: 44px;
+    font-size: 38px;
+    line-height: 1;
     color: var(--color-gold);
-    opacity: 0.85;
-    text-shadow: 0 0 24px rgba(212, 175, 55, 0.4);
+    text-shadow: 0 0 22px rgba(212, 175, 55, 0.55);
+    animation: qGlow 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes qGlow {
+    from { text-shadow: 0 0 14px rgba(212, 175, 55, 0.35); }
+    to { text-shadow: 0 0 34px rgba(212, 175, 55, 0.75); }
 }
 
 .tba-badge {

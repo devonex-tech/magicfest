@@ -50,12 +50,19 @@ WINNERS_2026 = [
 CHECK_SVG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>'
 
 SILHOUETTE_SVG = '''<svg viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <g fill="#0B0B0D" stroke="rgba(212,175,55,0.35)" stroke-width="1.5">
-    <rect x="68" y="14" width="64" height="52" rx="6"/>
-    <rect x="48" y="62" width="104" height="12" rx="6"/>
-    <circle cx="100" cy="106" r="30"/>
+  <defs>
+    <linearGradient id="silBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2E2E38"/>
+      <stop offset="100%" stop-color="#191920"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#silBody)" stroke="rgba(212,175,55,0.65)" stroke-width="2">
+    <rect x="68" y="10" width="64" height="54" rx="6"/>
+    <rect x="46" y="60" width="108" height="13" rx="6.5"/>
+    <circle cx="100" cy="108" r="31"/>
     <path d="M22 250 C22 182 62 152 100 152 C138 152 178 182 178 250 Z"/>
   </g>
+  <rect x="68" y="48" width="64" height="9" fill="rgba(212,175,55,0.55)"/>
 </svg>'''
 
 
@@ -159,7 +166,6 @@ def navbar(t, page):
                 <img src="/images/logo-ama.png" alt="MagicArt Fest" class="nav-logo-img">
             </a>
             <nav class="nav-menu" id="navMenu">
-                <a href="{href(t, "index")}" class="nav-link{act("index")}">{n["home"]}</a>
                 <a href="{href(t, "gala-show")}" class="nav-link{act("gala-show")}">{n["gala"]}</a>
                 <a href="{href(t, "competitie")}" class="nav-link{act("competitie")}">{n["competition"]}</a>
                 <div class="nav-item-dropdown">
@@ -1124,7 +1130,7 @@ def page_contact(t):
                 <div class="contact-map" data-animate="fade-left">
                     <div class="map-wrapper">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2714.5!2d26.7063!3d46.7156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b55d0d34138b35%3A0x3c8cd20e1c1b1b1!2sBuhu%C8%99i%2C+Bac%C4%83u!5e0!3m2!1sro!2sro!4v1"
+                            src="https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1sCasa+de+Cultura+Elisabeta+Bostan+Buhusi"
                             width="100%"
                             height="100%"
                             style="border:0;"
