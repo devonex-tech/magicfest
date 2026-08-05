@@ -1,6 +1,12 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/admin",
+      "destination": "/api/admin"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
