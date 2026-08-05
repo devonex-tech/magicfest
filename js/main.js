@@ -4,17 +4,19 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ---- Preloader ----
+    // ---- Preloader (doar pe pagina principală) ----
     const preloader = document.getElementById('preloader');
-    window.addEventListener('load', () => {
+    if (preloader) {
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+            }, 800);
+        });
+        // Fallback: hide preloader after 3s
         setTimeout(() => {
             preloader.classList.add('hidden');
-        }, 800);
-    });
-    // Fallback: hide preloader after 3s
-    setTimeout(() => {
-        preloader.classList.add('hidden');
-    }, 3000);
+        }, 3000);
+    }
 
     // ---- Custom Cursor ----
     const cursor = document.querySelector('.custom-cursor');
