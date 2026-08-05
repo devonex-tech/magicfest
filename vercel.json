@@ -7,6 +7,18 @@
       "destination": "/api/admin"
     }
   ],
+  "redirects": [
+    {
+      "source": "/ro/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/es/esp/:path*",
+      "destination": "/es",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
