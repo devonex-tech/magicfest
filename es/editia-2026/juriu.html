@@ -169,6 +169,23 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <div class="footer-newsletter">
+                <div class="footer-newsletter-text">
+                    <h4>📩 ¡No te pierdas nada de la magia!</h4>
+                    <p>Suscríbete al newsletter y sé el primero en conocer las novedades de MagicArt Fest 2027: invitados, precios y ofertas Early Bird.</p>
+                </div>
+                <div class="footer-newsletter-action">
+                    <form class="newsletter-form" id="nlFooterForm" novalidate>
+                        <input type="email" name="email" id="nlFooterEmail" placeholder="Tu dirección de email" required autocomplete="email">
+                        <button type="submit" class="btn btn-primary"><span>Suscribirme</span></button>
+                    </form>
+                    <label class="newsletter-consent">
+                        <input type="checkbox" id="nlFooterConsent" required>
+                        <span>Acepto recibir noticias de MagicArt Fest por email. Puedo darme de baja en cualquier momento. (RGPD)</span>
+                    </label>
+                    <div class="newsletter-status" id="nlFooterStatus"></div>
+                </div>
+            </div>
             <div class="footer-top">
                 <div class="footer-brand">
                     <a href="/es/" class="footer-logo-link">

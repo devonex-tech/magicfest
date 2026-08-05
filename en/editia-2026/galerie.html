@@ -189,6 +189,23 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <div class="footer-newsletter">
+                <div class="footer-newsletter-text">
+                    <h4>📩 Don't miss any of the magic!</h4>
+                    <p>Subscribe to the newsletter and be the first to know about MagicArt Fest 2027: guests, prices and Early Bird offers.</p>
+                </div>
+                <div class="footer-newsletter-action">
+                    <form class="newsletter-form" id="nlFooterForm" novalidate>
+                        <input type="email" name="email" id="nlFooterEmail" placeholder="Your email address" required autocomplete="email">
+                        <button type="submit" class="btn btn-primary"><span>Subscribe</span></button>
+                    </form>
+                    <label class="newsletter-consent">
+                        <input type="checkbox" id="nlFooterConsent" required>
+                        <span>I agree to receive MagicArt Fest news by email. I can unsubscribe at any time. (GDPR)</span>
+                    </label>
+                    <div class="newsletter-status" id="nlFooterStatus"></div>
+                </div>
+            </div>
             <div class="footer-top">
                 <div class="footer-brand">
                     <a href="/en/" class="footer-logo-link">

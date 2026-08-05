@@ -251,9 +251,27 @@ def footer(t, page, include_particles=False):
     n = t["nav"]
     f = t["footer"]
     particles = '\n    <script src="/js/particles.js"></script>' if include_particles else ''
+    nl = t["newsletter"]
     return f'''    <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <div class="footer-newsletter">
+                <div class="footer-newsletter-text">
+                    <h4>📩 {nl["title"]}</h4>
+                    <p>{nl["desc"]}</p>
+                </div>
+                <div class="footer-newsletter-action">
+                    <form class="newsletter-form" id="nlFooterForm" novalidate>
+                        <input type="email" name="email" id="nlFooterEmail" placeholder="{nl["placeholder"]}" required autocomplete="email">
+                        <button type="submit" class="btn btn-primary"><span>{nl["btn"]}</span></button>
+                    </form>
+                    <label class="newsletter-consent">
+                        <input type="checkbox" id="nlFooterConsent" required>
+                        <span>{nl["consent"]}</span>
+                    </label>
+                    <div class="newsletter-status" id="nlFooterStatus"></div>
+                </div>
+            </div>
             <div class="footer-top">
                 <div class="footer-brand">
                     <a href="{href(t, "index")}" class="footer-logo-link">
