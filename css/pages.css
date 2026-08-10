@@ -112,7 +112,7 @@ html {
     justify-content: center;
 }
 
-/* Sub 1280px meniul complet nu mai încape — trecem pe burger */
+/* Sub 1280px meniul complet nu mai încape - trecem pe burger */
 @media (max-width: 1279px) {
     .nav-menu,
     .nav-cta,

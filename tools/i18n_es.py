@@ -22,15 +22,15 @@ T = {
     },
 
     "footer": {
-        "tagline": "Asociación Magic Art (A.M.A.) — Desde 2005<br>El Festival Internacional de Magia de Rumanía",
+        "tagline": "Asociación Magic Art (A.M.A.) - Desde 2005<br>El Festival Internacional de Magia de Rumanía",
         "nav_title": "Navegación",
         "info_title": "Información",
-        "rights": "© 2026 MagicArt Fest — Asociación Magic Art (A.M.A.). Todos los derechos reservados.",
+        "rights": "© 2026 MagicArt Fest - Asociación Magic Art (A.M.A.). Todos los derechos reservados.",
     },
 
     "home": {
-        "title": "MagicArt Fest 2027 – Festival Internacional de Magia de Rumanía",
-        "description": "MagicArt Fest – El mayor festival internacional de magia de Rumanía. Mayo 2027, Buhuși, Bacău. Gala Show, competición FISM Qualified, talleres y magia al más alto nivel.",
+        "title": "MagicArt Fest 2027 - Festival Internacional de Magia de Rumanía",
+        "description": "MagicArt Fest - El mayor festival internacional de magia de Rumanía. Mayo 2027, Buhuși, Bacău. Gala Show, competición FISM Qualified, talleres y magia al más alto nivel.",
         "badge": "Edición 2027",
         "subtitle": "El Festival Internacional de Magia de Rumanía",
         "date": "Mayo 2027",
@@ -42,7 +42,7 @@ T = {
         "about_tag": "Descubre",
         "about_title": '¿Qué es <span class="accent">MagicArt</span> Fest?',
         "about_lead": "Vive la magia y la emoción de un espectáculo incendiario, sin precedentes en Rumanía. MagicArt Fest reúne a los magos más talentosos del mundo en un espectáculo inolvidable.",
-        "about_body": "Organizado por la <strong>Asociación Magic Art (A.M.A.)</strong> desde 2005, el festival es un <strong>concurso FISM Qualified</strong> – la organización de magia más prestigiosa del mundo. Durante tres días, Buhuși se convierte en la capital de la magia europea con competiciones internacionales, una gala con artistas de talla mundial, talleres interactivos y momentos de pura fascinación.",
+        "about_body": "Organizado por la <strong>Asociación Magic Art (A.M.A.)</strong> desde 2005, el festival es un <strong>concurso FISM Qualified</strong> - la organización de magia más prestigiosa del mundo. Durante tres días, Buhuși se convierte en la capital de la magia europea con competiciones internacionales, una gala con artistas de talla mundial, talleres interactivos y momentos de pura fascinación.",
         "fism_badge": "FISM Qualified Contest",
         "stat_days": "Días de Magia",
         "stat_artists": "Artistas Internacionales",
@@ -56,9 +56,9 @@ T = {
 
         "guests_tag": "Nuestros Invitados",
         "guests_title": 'Guest of Honor at <span class="accent">MagicArt Fest 2027</span>',
-        "guests_desc": "Estamos preparando un cartel excepcional. Los nombres de los invitados de honor se anunciarán muy pronto — ¡mantente atento!",
+        "guests_desc": "Estamos preparando un cartel excepcional. Los nombres de los invitados de honor se anunciarán muy pronto - ¡mantente atento!",
         "jury_tag": "El Jurado",
-        "jury_title": 'International Jury — <span class="accent">2027 Edition</span>',
+        "jury_title": 'International Jury - <span class="accent">2027 Edition</span>',
         "jury_desc": "Un prestigioso jurado internacional evaluará los números de la competición. La composición se anunciará pronto.",
         "tba": "Se anunciará pronto",
         "tba_badge": "Coming Soon",
@@ -89,8 +89,8 @@ T = {
     },
 
     "gala": {
-        "title": "International Gala Show – MagicArt Fest 2027",
-        "description": "Gala Show de MagicArt Fest 2027 – espectáculo de magia con artistas de talla mundial. 7-8 de mayo de 2027, Casa de Cultura “Elisabeta Bostan”, Buhuși.",
+        "title": "International Gala Show - MagicArt Fest 2027",
+        "description": "Gala Show de MagicArt Fest 2027 - espectáculo de magia con artistas de talla mundial. 7-8 de mayo de 2027, Casa de Cultura “Elisabeta Bostan”, Buhuși.",
         "hero_tag": "El Evento Principal",
         "hero_title": "International Gala Show",
         "hero_sub": "Una noche en la que lo imposible se hace realidad.",
@@ -103,18 +103,18 @@ T = {
         "age_label": "Edad",
         "age": "Recomendado 6+",
         "price_label": "Precio",
-        "price": "Desde 80 Lei — ¡Early Bird disponible!",
+        "price": "Desde 80 Lei - ¡Early Bird disponible!",
         "btn": "Comprar Entradas",
         "date_month": "MAYO",
         "date_year": "2027",
     },
 
     "competition": {
-        "title": "Competición Internacional FISM – MagicArt Fest 2027",
+        "title": "Competición Internacional FISM - MagicArt Fest 2027",
         "description": "Concurso de magia FISM Qualified en MagicArt Fest 2027: Stage, Close-Up y Junior. Abierto a magos aficionados y profesionales de todo el mundo.",
         "hero_tag": "Concurso FISM",
         "hero_title": "La Competición Internacional",
-        "hero_sub": "Concurso FISM Qualified — abierto a todos los magos, aficionados o profesionales, sin límite de edad.",
+        "hero_sub": "Concurso FISM Qualified - abierto a todos los magos, aficionados o profesionales, sin límite de edad.",
         "categories": [
             {"num": "01", "title": "Stage Magic", "desc": "Magia de escenario con efectos visuales espectaculares para el gran público."},
             {"num": "02", "title": "Close-Up Magic", "desc": "Magia de cerca, trucos con cartas, monedas y objetos cotidianos."},
@@ -133,8 +133,8 @@ T = {
     },
 
     "tickets": {
-        "title": "Entradas – MagicArt Fest 2027",
-        "description": "Entradas para la Gala Show de MagicArt Fest 2027 – Standard, Premium y VIP. Early Bird disponible. Buhuși, Bacău, mayo de 2027.",
+        "title": "Entradas - MagicArt Fest 2027",
+        "description": "Entradas para la Gala Show de MagicArt Fest 2027 - Standard, Premium y VIP. Early Bird disponible. Buhuși, Bacău, mayo de 2027.",
         "hero_tag": "Entradas 2027",
         "hero_title": "Elige tu Experiencia",
         "hero_sub": "Las entradas Early Bird ya están disponibles para la edición 2027. ¡Aprovecha los precios especiales!",
@@ -143,13 +143,13 @@ T = {
         "popular": "Popular",
         "cards": [
             {"type": "Standard", "price": "80", "features": ["Acceso a la Gala Show", "Asiento en la sala", "Acceso al Magic Shop"], "featured": False},
-            {"type": "Premium", "price": "150", "features": ["Acceso a la Gala Show", "Asiento premium — filas 1-5", "Acceso al Magic Shop", "Meet & Greet con los artistas"], "featured": True},
-            {"type": "VIP", "price": "250", "features": ["Acceso a la Gala Show", "Asiento VIP — primera fila", "Acceso completo 3 días", "Meet & Greet exclusivo", "Regalo sorpresa MagicArt"], "featured": False},
+            {"type": "Premium", "price": "150", "features": ["Acceso a la Gala Show", "Asiento premium - filas 1-5", "Acceso al Magic Shop", "Meet & Greet con los artistas"], "featured": True},
+            {"type": "VIP", "price": "250", "features": ["Acceso a la Gala Show", "Asiento VIP - primera fila", "Acceso completo 3 días", "Meet & Greet exclusivo", "Regalo sorpresa MagicArt"], "featured": False},
         ],
     },
 
     "register": {
-        "title": "Inscripción de Participantes – MagicArt Fest 2027",
+        "title": "Inscripción de Participantes - MagicArt Fest 2027",
         "description": "Inscríbete en MagicArt Fest 2027: paquetes Standard y Full para magos, competición FISM, gala show, conferencias y zona de dealers.",
         "hero_tag": "Participantes 2027",
         "hero_title": "Inscripción al Festival",
@@ -170,8 +170,8 @@ T = {
         "full_features": [
             "Goody bag",
             "4 Conferencias",
-            "Competición Stage Magic — FISM Qualified",
-            "Competición Close-Up Magic — FISM Qualified",
+            "Competición Stage Magic - FISM Qualified",
+            "Competición Close-Up Magic - FISM Qualified",
             "Acceso a la zona de dealers",
             "International Gala Show",
             "Cena festiva incluida",
@@ -238,7 +238,7 @@ T = {
     },
 
     "faq": {
-        "title": "Preguntas Frecuentes – MagicArt Fest 2027",
+        "title": "Preguntas Frecuentes - MagicArt Fest 2027",
         "description": "Respuestas a las preguntas más frecuentes sobre MagicArt Fest 2027: entradas, edad mínima, horarios, normas de foto y vídeo y la competición FISM.",
         "hero_tag": "Preguntas",
         "hero_title": "Preguntas Frecuentes",
@@ -253,7 +253,7 @@ T = {
     },
 
     "contact": {
-        "title": "Contacto – MagicArt Fest 2027",
+        "title": "Contacto - MagicArt Fest 2027",
         "description": "Contacta con el equipo de MagicArt Fest: WhatsApp +40 729 290 290, festmagic@yahoo.com. Calle Republicii, Buhuși, Bacău.",
         "hero_tag": "Contacto",
         "hero_title": "Ponte en Contacto",
@@ -268,7 +268,7 @@ T = {
     "e2026": {
         "breadcrumb": "Edición 2026",
         "winners": {
-            "title": "Ganadores de la Edición 2026 – MagicArt Fest",
+            "title": "Ganadores de la Edición 2026 - MagicArt Fest",
             "description": "Los ganadores de la competición internacional de magia MagicArt Fest 2026: Tony Vasil, Bozhidar Kolev y Iulian Paraschiv.",
             "hero_tag": "Edición 2026",
             "hero_title": "Ganadores de la Edición 2026",
@@ -281,7 +281,7 @@ T = {
             "cta_btn": "Inscríbete en la Competición",
         },
         "guests": {
-            "title": "Invitados de Honor 2026 – MagicArt Fest",
+            "title": "Invitados de Honor 2026 - MagicArt Fest",
             "description": "Los invitados de honor de la edición MagicArt Fest 2026: Kimoon Do, Jeki Yoo, Gabriel Gascón, Piksi, Teatro Blu Magic, Eduard y Bianca.",
             "hero_tag": "Edición 2026",
             "hero_title": "Invitados de Honor 2026",
@@ -290,7 +290,7 @@ T = {
             "role_gala": "Gala Show",
         },
         "jury": {
-            "title": "Jurado de la Edición 2026 – MagicArt Fest",
+            "title": "Jurado de la Edición 2026 - MagicArt Fest",
             "description": "El jurado internacional de la competición MagicArt Fest 2026: Xavier Tapias, Serge Odin, Lee Alex y Christianis.",
             "hero_tag": "Edición 2026",
             "hero_title": "Jurado de la Edición 2026",
@@ -303,7 +303,7 @@ T = {
             },
         },
         "gallery": {
-            "title": "Fotos y Vídeo – Edición 2026 – MagicArt Fest",
+            "title": "Fotos y Vídeo - Edición 2026 - MagicArt Fest",
             "description": "Galería de fotos y vídeos de MagicArt Fest 2026: momentos de la Gala Show, la competición y el ambiente del festival en Buhuși.",
             "hero_tag": "Edición 2026",
             "hero_title": "Fotos y Vídeo 2026",
@@ -312,7 +312,7 @@ T = {
             "videos_title": 'Grabaciones de <span class="accent">Vídeo</span>',
             "video_placeholder": "Las grabaciones de vídeo de la edición 2026 estarán disponibles aquí muy pronto.",
             "video_cta": "Visita nuestro canal de YouTube",
-            "img_alt": "MagicArt Fest 2026 — momento del festival",
+            "img_alt": "MagicArt Fest 2026 - momento del festival",
         },
     },
 

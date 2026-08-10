@@ -2,7 +2,7 @@ import { neon } from '@neondatabase/serverless';
 import { timingSafeEqual } from 'node:crypto';
 
 // Pagina de administrare: /admin (rewrite către /api/admin în vercel.json).
-// Protejată cu HTTP Basic Auth — user "admin", parola din env ADMIN_PASSWORD.
+// Protejată cu HTTP Basic Auth - user "admin", parola din env ADMIN_PASSWORD.
 // GET /admin                     → tabelele cu înscrieri și abonați
 // GET /admin?export=registrations → CSV înscrieri
 // GET /admin?export=newsletter    → CSV abonați
@@ -67,15 +67,15 @@ function page(regs, subs) {
     <td>${esc(r.email)}<br><span class="dim">${esc(r.whatsapp)}</span></td>
     <td><span class="badge ${r.package === 'Full' ? 'gold' : ''}">${esc(r.package)}</span></td>
     <td>${r.accommodation === 'With accommodation' ? 'Cu cazare' : 'Fără cazare'}${r.roommate ? `<br><span class="dim">Coleg: ${esc(r.roommate)}</span>` : ''}</td>
-    <td>${r.category === 'None' ? '—' : esc(r.category)}</td>
-    <td>${r.dealer_upgrade === 'Yes' ? `Da${r.store_name ? ` — ${esc(r.store_name)}` : ''}` : '—'}</td>
-    <td class="comments">${esc(r.comments) || '—'}</td>
+    <td>${r.category === 'None' ? ' - ' : esc(r.category)}</td>
+    <td>${r.dealer_upgrade === 'Yes' ? `Da${r.store_name ? ` - ${esc(r.store_name)}` : ''}` : ' - '}</td>
+    <td class="comments">${esc(r.comments) || ' - '}</td>
   </tr>`).join('');
 
   const subRows = subs.map((s) => `<tr>
     <td>${esc(RO_DATE.format(new Date(s.created_at)))}</td>
     <td>${esc(s.email)}</td>
-    <td>${s.lang ? esc(s.lang.toUpperCase()) : '—'}</td>
+    <td>${s.lang ? esc(s.lang.toUpperCase()) : ' - '}</td>
   </tr>`).join('');
 
   return `<!DOCTYPE html>
@@ -84,7 +84,7 @@ function page(regs, subs) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>MagicArt Fest — Administrare</title>
+<title>MagicArt Fest - Administrare</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: system-ui, sans-serif; background: #0A0A0B; color: #F0F0F2; padding: 32px 20px; }
@@ -109,7 +109,7 @@ function page(regs, subs) {
 </head>
 <body>
 <div class="wrap">
-  <h1>🎩 MagicArt Fest — <span>Administrare</span></h1>
+  <h1>🎩 MagicArt Fest - <span>Administrare</span></h1>
   <p class="sub">Datele se actualizează la fiecare încărcare a paginii. Exportul CSV se deschide direct în Excel.</p>
 
   <h2>Înscrieri participanți <span class="count">${regs.length}</span> <a class="export" href="/admin?export=registrations">⬇ Export Excel (CSV)</a></h2>

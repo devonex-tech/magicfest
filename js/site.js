@@ -1,6 +1,6 @@
 /* ============================================
    MagicArt Fest - Site-wide JavaScript
-   (newsletter: popup + formular în footer — pe toate paginile)
+   (newsletter: popup + formular în footer - pe toate paginile)
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
     const DISMISS_TTL = 7 * 24 * 60 * 60 * 1000; // 7 zile
 
-    // localStorage poate arunca (private mode) — acces protejat
+    // localStorage poate arunca (private mode) - acces protejat
     function lsGet(key) {
         try { return localStorage.getItem(key); } catch (e) { return null; }
     }
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.removeEventListener('scroll', onScrollTrigger);
     }
 
-    // Afișare: la 12s sau la 40% scroll — primul care se întâmplă
+    // Afișare: la 12s sau la 40% scroll - primul care se întâmplă
     timerId = setTimeout(showPopup, 12000);
     window.addEventListener('scroll', onScrollTrigger, { passive: true });
 

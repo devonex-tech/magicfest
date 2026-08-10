@@ -4,7 +4,7 @@ Generator static MagicArt Fest 2027.
 
 Rulează:  python3 tools/build.py
 Generează HTML-ul pentru toate paginile în RO (rădăcină), EN (/en/) și ES (/es/),
-plus sitemap.xml. Textele stau în tools/i18n_{ro,en,es}.py — modifici acolo,
+plus sitemap.xml. Textele stau în tools/i18n_{ro,en,es}.py - modifici acolo,
 rulezi scriptul și toate cele 3 limbi se regenerează consistent.
 """
 import json
@@ -1366,7 +1366,7 @@ def build():
         f.write(sitemap)
     written.append("sitemap.xml")
 
-    print(f"OK — {len(written)} fișiere generate:")
+    print(f"OK - {len(written)} fișiere generate:")
     for w in written:
         print("  ", w)
 

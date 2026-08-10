@@ -1,6 +1,6 @@
 /* ============================================
    MagicArt Fest - Registration Form
-   (formular multi-step — doar pagina de înscriere)
+   (formular multi-step - doar pagina de înscriere)
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const dt = document.createElement('dt');
             dt.textContent = label || '';
             const dd = document.createElement('dd');
-            dd.textContent = value || '—';
+            dd.textContent = value || '-';
             summaryList.appendChild(dt);
             summaryList.appendChild(dd);
         });

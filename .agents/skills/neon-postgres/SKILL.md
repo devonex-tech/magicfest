@@ -24,7 +24,7 @@ npx skills add neondatabase/agent-skills --skill neon
 
 # Lakebase Postgres
 
-Lakebase Postgres is the database at the core of Neon. It runs on the lakebase architecture — OLTP built directly on cloud object storage — which decouples storage from compute to offer autoscaling, branching, instant restore, and scale-to-zero. It's fully compatible with Postgres and works with any language, framework, or ORM that supports Postgres.
+Lakebase Postgres is the database at the core of Neon. It runs on the lakebase architecture - OLTP built directly on cloud object storage - which decouples storage from compute to offer autoscaling, branching, instant restore, and scale-to-zero. It's fully compatible with Postgres and works with any language, framework, or ORM that supports Postgres.
 
 It is the same database whether you reach it through Neon or through Databricks; this skill covers the Neon access path.
 
@@ -60,7 +60,7 @@ Recommendations:
 - On Vercel, use `node-postgres` (`npm install pg`) with Vercel Fluid compute and `import { attachDatabasePool } from "@vercel/functions";`
 - On Cloudflare, use `node-postgres` with Cloudflare Hyperdrive
 - On Neon Functions, use `node-postgres`, as the functions are long-running and reuse the pool across requests.
-- Use the `@neondatabase/serverless` driver for serverless and edge environments (for example, when using Netlify) — HTTP transport for one-shot queries, WebSocket for transaction support. Link: https://neon.com/docs/serverless/serverless-driver.md
+- Use the `@neondatabase/serverless` driver for serverless and edge environments (for example, when using Netlify) - HTTP transport for one-shot queries, WebSocket for transaction support. Link: https://neon.com/docs/serverless/serverless-driver.md
 
 ### 4. Set up the schema
 

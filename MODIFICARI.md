@@ -1,4 +1,4 @@
-# MagicArt Fest 2027 — Listă de modificări (structurată pe pagini)
+# MagicArt Fest 2027 - Listă de modificări (structurată pe pagini)
 
 > Sursă conținut ediția 2026: https://magicartfest.eu/ (site-ul actual).
 > Toate punctele sunt fezabile. Singurul care necesită backend: newsletter-ul cu bază de date (se rezolvă pe Vercel cu o funcție serverless + storage).
@@ -6,7 +6,7 @@
 
 ---
 
-## 1. Pagini noi — „Istoric / Ediția 2026" (pagini separate)
+## 1. Pagini noi - „Istoric / Ediția 2026" (pagini separate)
 
 Conținut preluat de pe site-ul actual. Propunere: un meniu „Ediția 2026" în navbar cu 4 pagini:
 
@@ -23,21 +23,21 @@ Conținut preluat de pe site-ul actual. Propunere: un meniu „Ediția 2026" în
 
 ## 2. Pagina principală
 
-- Secțiunea invitați: titlu **„Guest of Honor at MagicArt Fest 2027"** — poze înlocuite deocamdată cu **siluete** (placeholder).
-- Secțiune juriu: titlu **„International Jury — 2027 Edition"** — tot siluete deocamdată.
+- Secțiunea invitați: titlu **„Guest of Honor at MagicArt Fest 2027"** - poze înlocuite deocamdată cu **siluete** (placeholder).
+- Secțiune juriu: titlu **„International Jury - 2027 Edition"** - tot siluete deocamdată.
 - Grila actuală „Artiștii Gala Show 2026" se mută pe paginile de istoric.
 
 ## 3. Pagina de înregistrare (de construit în site-ul nou, portată de pe cel vechi)
 
 Modificări față de formularul actual:
-- **Pasul 2:** se scot „Acces la Mici — Magic Party" și „Seat in double room".
+- **Pasul 2:** se scot „Acces la Mici - Magic Party" și „Seat in double room".
 - Preferința „cameră single / dublă" devine: **„Pachet cu cazare / Pachet fără cazare"**.
 
-Idei de îmbunătățire (cerute de client — de validat):
+Idei de îmbunătățire (cerute de client - de validat):
 - indicator de progres (pasul 1/2/3) + rezumat înainte de trimitere;
 - validare inline pe câmpuri, mesaje de eroare clare, datele nu se pierd la eroare;
 - email de confirmare automat după înscriere;
-- honeypot + rate limit anti-spam; checkbox GDPR (există deja pe site-ul vechi — se păstrează);
+- honeypot + rate limit anti-spam; checkbox GDPR (există deja pe site-ul vechi - se păstrează);
 - contor „locuri rămase" real (pe site-ul vechi afișează „SEATS AVAILABLE 0");
 - optimizare mobil (formularul actual e greoi pe telefon).
 
@@ -51,16 +51,16 @@ Idei de îmbunătățire (cerute de client — de validat):
 5. Festive Dinner included
 6. Magic Party Acces
 
-**FULL** — rămâne ca pe site-ul actual (Standard + goody bag, 4 lectures, FISM Qualified, cazare).
+**FULL** - rămâne ca pe site-ul actual (Standard + goody bag, 4 lectures, FISM Qualified, cazare).
 
-- ❓ **Prețuri:** nedecise — se afișează „Early Bird în curând" / fără preț până decide clientul.
+- ❓ **Prețuri:** nedecise - se afișează „Early Bird în curând" / fără preț până decide clientul.
 
-## 5. Newsletter (necesită backend — fezabil)
+## 5. Newsletter (necesită backend - fezabil)
 
 - Captare email la intrarea pe site, salvare **în bază de date**.
-- Pe Vercel: funcție serverless + bază de date (ex. Neon Postgres / Upstash din Vercel Marketplace) sau un provider de email (Brevo/Mailchimp — oferă și trimiterea newsletterelor, nu doar stocare). **Recomandare:** provider de email, ca lista să fie direct utilizabilă.
+- Pe Vercel: funcție serverless + bază de date (ex. Neon Postgres / Upstash din Vercel Marketplace) sau un provider de email (Brevo/Mailchimp - oferă și trimiterea newsletterelor, nu doar stocare). **Recomandare:** provider de email, ca lista să fie direct utilizabilă.
 - GDPR: consimțământ explicit + recomandat double opt-in.
-- Recomandare UX: popup cu delay (după ~10s sau la scroll), nu instant la intrare — popup-ul imediat crește bounce rate.
+- Recomandare UX: popup cu delay (după ~10s sau la scroll), nu instant la intrare - popup-ul imediat crește bounce rate.
 
 ## 6. Texte
 
@@ -68,7 +68,7 @@ Idei de îmbunătățire (cerute de client — de validat):
 
 ## 7. Comparație cu festivaluri similare (în așteptare)
 
-- Golden Cat + Türkiye Magic Festival — se face analiza comparativă când clientul trimite linkurile.
+- Golden Cat + Türkiye Magic Festival - se face analiza comparativă când clientul trimite linkurile.
 
 ---
 
@@ -76,6 +76,6 @@ Idei de îmbunătățire (cerute de client — de validat):
 
 1. Linkurile video pentru galeria 2026 (YouTube?).
 2. Pozele câștigătorilor 2026 (le preluăm de pe site-ul vechi sau trimite variante mai bune?).
-3. Prețurile pachetelor — până atunci afișăm fără preț?
-4. Site-ul vechi e în RO/EN/ES — site-ul nou rămâne doar RO sau facem și EN?
+3. Prețurile pachetelor - până atunci afișăm fără preț?
+4. Site-ul vechi e în RO/EN/ES - site-ul nou rămâne doar RO sau facem și EN?
 5. Newsletter: e ok popup cu delay în loc de popup imediat la intrare?

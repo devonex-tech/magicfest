@@ -1,8 +1,8 @@
-// POST /api/register — salvează o înscriere în Neon Postgres și (opțional) notifică organizatorul prin Resend.
+// POST /api/register - salvează o înscriere în Neon Postgres și (opțional) notifică organizatorul prin Resend.
 import { neon } from '@neondatabase/serverless';
 
 // --- Rate limiting simplu în memorie, per IP ---
-// NOTĂ: best-effort — Map-ul trăiește doar cât trăiește instanța funcției serverless
+// NOTĂ: best-effort - Map-ul trăiește doar cât trăiește instanța funcției serverless
 // (cold start = reset; instanțe paralele = contoare separate). Suficient ca frână de bază.
 const RATE_WINDOW_MS = 10 * 60 * 1000; // 10 minute
 const RATE_MAX = 5; // max 5 înscrieri / IP / fereastră
@@ -85,7 +85,7 @@ async function ensureTable(sql) {
     )`;
 }
 
-// Notificare pe email prin Resend — opțională; eșecul ei nu afectează răspunsul.
+// Notificare pe email prin Resend - opțională; eșecul ei nu afectează răspunsul.
 async function notifyOrganizer(d) {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) return;
@@ -149,7 +149,7 @@ export default async function handler(req, res) {
   if (error) return res.status(400).json({ error });
 
   if (!process.env.DATABASE_URL) {
-    console.error('DATABASE_URL is not set — run `vercel integration add neon` and redeploy.');
+    console.error('DATABASE_URL is not set - run `vercel integration add neon` and redeploy.');
     return res.status(503).json({ error: 'Service not configured' });
   }
 
@@ -173,7 +173,7 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Internal server error' });
   }
 
-  // Email de notificare — best effort, nu blochează răspunsul de succes.
+  // Email de notificare - best effort, nu blochează răspunsul de succes.
   try {
     await notifyOrganizer(data);
   } catch (err) {
