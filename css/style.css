@@ -2299,3 +2299,38 @@ ul {
         aspect-ratio: 3/2;
     }
 }
+
+/* ==========================================================================
+   Cursor pointer pe tot ce e clicabil
+   Butoanele <button> il au deja din reset; astea sunt <a> si carduri
+   care se comporta ca butoane.
+   ========================================================================== */
+a[href],
+label,
+.btn,
+.nav-link,
+.nav-cta,
+.nav-toggle,
+.nav-logo,
+.mobile-link,
+.lang-switcher a,
+.faq-question,
+.form-progress-step,
+.package-card .btn,
+.ticket-card .btn,
+.edition-link-card,
+.gallery-item,
+.winner-card,
+.social-link,
+[role="button"],
+[onclick] {
+    cursor: pointer;
+}
+
+/* Elementele dezactivate nu trebuie sa para clicabile */
+button:disabled,
+.btn:disabled,
+.btn.disabled,
+[aria-disabled="true"] {
+    cursor: not-allowed;
+}

@@ -110,7 +110,7 @@
                 <div class="package-card" data-animate="fade-up">
                     <span class="package-name">Standard</span>
                     <span class="package-includes-label">El paquete incluye</span>
-                    <div class="package-price">El precio se anunciará pronto</div>
+                    <div class="package-price">119 € <span style="font-size:.5em;font-weight:400;opacity:.8">/ persona</span></div>
                     <ul class="package-features">
                         <li>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -136,13 +136,21 @@
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
                             <span>Acceso a la Magic Party</span>
                         </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Acceso a 4 Lectures</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Insignia personalizada</span>
+                        </li>
                     </ul>
                     <a href="#registerForm" class="btn btn-outline btn-full">Inscríbete ahora</a>
                 </div>
                 <div class="package-card featured" data-animate="fade-up" data-delay="150">
                     <span class="package-name">Full</span>
                     <span class="package-includes-label">El paquete incluye</span>
-                    <div class="package-price">El precio se anunciará pronto</div>
+                    <div class="package-price">149 € <span style="font-size:.5em;font-weight:400;opacity:.8">/ persona</span></div>
                     <ul class="package-features">
                         <li>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -180,9 +188,27 @@
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
                             <span>Posibilidad de participar en la competición</span>
                         </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Insignia personalizada</span>
+                        </li>
                     </ul>
                     <a href="#registerForm" class="btn btn-primary btn-full">Inscríbete ahora</a>
                 </div>
+            </div>
+            <div class="register-form-wrapper" data-animate="fade-up" style="margin-top:32px;">
+                <h3 style="margin-bottom:14px;">Descuentos disponibles</h3>
+                <ul class="ticket-features" style="display:flex;flex-direction:column;gap:12px;">
+                    <li>Los titulares de la tarjeta FISM obtienen un <strong>10% de descuento</strong>, con el código <strong>FISM10</strong>.</li>
+                    <li>Los participantes menores de 18 años obtienen un <strong>20% de descuento</strong>, con el código <strong>UNDER18</strong>.</li>
+                    <li>Los participantes de la edición 2026 obtienen un <strong>5% de descuento por fidelidad</strong>, aplicado al confirmar la inscripción.</li>
+                </ul>
+                <h3 style="margin:26px 0 14px;">Alojamiento (opcional)</h3>
+                <p>Si desea alojarse en uno de los hoteles asociados de MagicArt Fest, marque la opción en el formulario. Los organizadores le enviarán después los hoteles disponibles, las tarifas y la forma de reserva.</p>
+                <ul class="ticket-features" style="display:flex;flex-direction:column;gap:12px;">
+                    <li><strong>30 € / noche / persona</strong> - plaza en habitación doble, en los hoteles asociados.</li>
+                    <li>La habitación individual implica un coste mayor. La tarifa final se comunica al confirmar la inscripción.</li>
+                </ul>
             </div>
             <p class="package-note">(*) Los cambios o transferencias de inscripción entre participantes conllevan una penalización. No se ofrecen reembolsos.</p>
         </div>
@@ -296,6 +322,7 @@
 
                         <div class="form-group">
                             <label>¿Prefieres el paquete con o sin alojamiento? <span class="req">*</span></label>
+                            <p class="form-hint" style="margin:-4px 0 10px;opacity:.75;font-size:.9em;">Hoteles asociados: 30 € / noche / persona, plaza en habitación doble. La habitación individual cuesta más; la tarifa se confirma con la inscripción.</p>
                             <div class="radio-cards">
                                 <label class="radio-card">
                                     <input type="radio" name="accommodation" value="With accommodation" checked>
