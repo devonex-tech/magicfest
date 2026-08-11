@@ -200,6 +200,35 @@ document.addEventListener('DOMContentLoaded', () => {
         setStatus(i18n.success, 'success');
         const nav = form.querySelector('.form-nav');
         if (nav) nav.style.display = 'none';
+        goToPayment();
+    }
+
+    // Inscrierea e deja salvata in acest punct. Daca plata nu poate fi
+    // pornita, NU stricam mesajul de succes: omul chiar s-a inscris, iar
+    // organizatorul il poate contacta pentru plata. Ii aratam doar o nota.
+    function goToPayment() {
+        const payload = {
+            package: radioValue('package'),
+            email: fieldValue('email'),
+            name: (fieldValue('first_name') + ' ' + fieldValue('last_name')).trim(),
+            lang: i18n.lang
+        };
+
+        setStatus(i18n.redirecting || i18n.success, 'success');
+
+        fetch('/api/checkout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        }).then((res) => (res.ok ? res.json() : null)).then((data) => {
+            if (data && data.url) {
+                window.location.href = data.url;
+            } else {
+                setStatus(i18n.pay_later || i18n.success, 'success');
+            }
+        }).catch(() => {
+            setStatus(i18n.pay_later || i18n.success, 'success');
+        });
     }
 
     function submitForm() {
