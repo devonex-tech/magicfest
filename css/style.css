@@ -2404,3 +2404,18 @@ button:disabled,
         align-items: center;
     }
 }
+
+/* Linkurile sociale din subsol aveau ~19x20px, prea mici pentru deget. */
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.footer-social a {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
