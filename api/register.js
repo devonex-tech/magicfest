@@ -25,6 +25,18 @@ const PACKAGES = ['Full', 'Standard'];
 const ACCOMMODATIONS = ['With accommodation', 'Without accommodation'];
 const CATEGORIES = ['Stage', 'Close-Up', 'None'];
 
+// Formularul trimite valorile in engleza (sunt aceleasi pentru toate limbile
+// site-ului). In Brevo le scriem in romana, ca sa fie citibile de organizator.
+const ACCOMMODATION_RO = {
+  'With accommodation': 'Cu cazare',
+  'Without accommodation': 'Fara cazare',
+};
+const CATEGORY_RO = {
+  Stage: 'Stage Magic',
+  'Close-Up': 'Close-Up Magic',
+  None: 'Nu particip',
+};
+
 // Elimină caracterele de control și trunchiază la o lungime maximă.
 function clean(value, maxLen = 200) {
   if (typeof value !== 'string') return '';
@@ -221,13 +233,18 @@ async function syncToBrevo(d) {
         listIds: [listId],
         updateEnabled: true, // contact existent = actualizat, nu eroare de duplicat
         attributes: {
+          // FIRSTNAME/LASTNAME sunt atribute de sistem, Brevo le foloseste la
+          // personalizarea campaniilor. Le pastram si dublam in PRENUME/NUME,
+          // ca sa fie coloanele lizibile in romana in interfata.
           FIRSTNAME: d.first_name,
           LASTNAME: d.last_name,
+          PRENUME: d.first_name,
+          NUME: d.last_name,
           WHATSAPP: d.whatsapp,
           TARA: d.country,
           PACHET: d.package,
-          CAZARE: d.accommodation,
-          CATEGORIE: d.category,
+          CAZARE: ACCOMMODATION_RO[d.accommodation] || d.accommodation,
+          CATEGORIE: CATEGORY_RO[d.category] || d.category,
           NUME_SCENA: d.stage_name,
           SOCIETATE: d.magic_society,
           LIMBA: (d.lang || 'ro').toUpperCase(),
