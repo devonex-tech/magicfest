@@ -1114,3 +1114,24 @@ html {
         margin-right: 8px;
     }
 }
+
+/* ---- Video cu actul castigatorului ----
+   Clipuri verticale (9:16), incarcate doar la click (preload="none"),
+   ca sa nu coste trafic pentru cine doar deruleaza pagina. */
+.winner-video {
+    width: 100%;
+    max-width: 260px;
+    aspect-ratio: 9 / 16;
+    margin: 0 auto 18px;
+    display: block;
+    border-radius: var(--border-radius, 8px);
+    background: #000;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .winner-video {
+        max-width: 100%;
+    }
+}
