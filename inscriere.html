@@ -241,7 +241,10 @@
                     </div>
                 </div>
                 <form id="mafRegisterForm" novalidate>
-                    <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <!-- Capcana anti-robot. Numele campului NU trebuie sa semene cu un camp real
+                         (company, name, address...), altfel completarea automata din browser
+                         il umple si vizitatorul e tratat gresit drept robot. -->
+                    <input type="text" name="maf_hp_2" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" inputmode="none">
 
                     <!-- STEP 1: personal -->
                     <div class="form-step active" data-step="1">

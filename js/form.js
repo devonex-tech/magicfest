@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const summaryList = document.getElementById('formSummaryList');
     const termsBox = document.getElementById('f-terms');
     const termsError = document.getElementById('termsError');
-    const honeypot = form.querySelector('input[name="company"]');
+    const honeypot = form.querySelector('input[name="maf_hp_2"]');
     const i18nEl = document.getElementById('mafFormI18n');
 
     if (!steps.length || !backBtn || !nextBtn || !status || !i18nEl) return;
@@ -211,10 +211,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (termsError) termsError.style.display = 'none';
 
-        // Honeypot completat → simulăm succes, fără request
+        // Capcana anti-robot: doar un robot completeaza un camp invizibil.
+        // Nu mai simulam succes in tacere - daca ajungem aici din greseala
+        // (completare automata din browser), inscrierea s-ar pierde fara ca
+        // nimeni sa afle. Golim campul, logam, si trimitem normal.
         if (honeypot && honeypot.value) {
-            onSuccess();
-            return;
+            console.warn('Camp-capcana completat automat de browser; il ignor si trimit normal.');
+            honeypot.value = '';
         }
 
         sending = true;
