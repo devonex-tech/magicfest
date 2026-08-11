@@ -221,9 +221,9 @@ async function syncToBrevo(d) {
         listIds: [listId],
         updateEnabled: true, // contact existent = actualizat, nu eroare de duplicat
         attributes: {
-          NOM: d.first_name,
-          PRENOM: d.last_name,
-          SMS: d.whatsapp,
+          FIRSTNAME: d.first_name,
+          LASTNAME: d.last_name,
+          WHATSAPP: d.whatsapp,
           TARA: d.country,
           PACHET: d.package,
           CAZARE: d.accommodation,
