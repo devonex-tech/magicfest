@@ -81,5 +81,39 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Internal server error' });
   }
 
+  // Trimite abonatul si in Brevo, in lista din BREVO_LIST_ID.
+  // Baza noastra ramane sursa de adevar: daca Brevo cade, abonarea tot reuseste.
+  await syncToBrevo(email, lang);
+
   return res.status(200).json({ ok: true });
+}
+
+async function syncToBrevo(email, lang) {
+  const apiKey = process.env.BREVO_API_KEY;
+  const listId = Number(process.env.BREVO_LIST_ID);
+  if (!apiKey || !listId) return;
+
+  try {
+    const r = await fetch('https://api.brevo.com/v3/contacts', {
+      method: 'POST',
+      headers: {
+        'api-key': apiKey,
+        'content-type': 'application/json',
+        accept: 'application/json',
+      },
+      body: JSON.stringify({
+        email,
+        listIds: [listId],
+        updateEnabled: true, // contact existent = adaugat la lista, nu eroare
+        attributes: { LIMBA: (lang || 'ro').toUpperCase(), SURSA: 'magicartfest.eu' },
+      }),
+    });
+
+    if (!r.ok) {
+      const body = await r.text();
+      console.error('Brevo sync failed:', r.status, body.slice(0, 300));
+    }
+  } catch (err) {
+    console.error('Brevo sync error:', err);
+  }
 }
