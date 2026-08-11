@@ -180,5 +180,52 @@ export default async function handler(req, res) {
     console.error('Organizer notification failed:', err);
   }
 
+  // Participantul ajunge si in Brevo, in lista din BREVO_PARTICIPANTS_LIST_ID.
+  await syncToBrevo(data);
+
   return res.status(200).json({ ok: true });
+}
+
+// Trimite participantul in Brevo. Best effort: baza noastra e sursa de adevar,
+// asa ca o eroare de la Brevo nu trebuie sa strice o inscriere deja salvata.
+async function syncToBrevo(d) {
+  const apiKey = process.env.BREVO_API_KEY;
+  const listId = Number(process.env.BREVO_PARTICIPANTS_LIST_ID);
+  if (!apiKey || !listId) return;
+
+  try {
+    const r = await fetch('https://api.brevo.com/v3/contacts', {
+      method: 'POST',
+      headers: {
+        'api-key': apiKey,
+        'content-type': 'application/json',
+        accept: 'application/json',
+      },
+      body: JSON.stringify({
+        email: d.email,
+        listIds: [listId],
+        updateEnabled: true, // contact existent = actualizat, nu eroare de duplicat
+        attributes: {
+          NOM: d.first_name,
+          PRENOM: d.last_name,
+          SMS: d.whatsapp,
+          TARA: d.country,
+          PACHET: d.package,
+          CAZARE: d.accommodation,
+          CATEGORIE: d.category,
+          NUME_SCENA: d.stage_name,
+          SOCIETATE: d.magic_society,
+          LIMBA: (d.lang || 'ro').toUpperCase(),
+          SURSA: 'inscriere magicartfest.eu',
+        },
+      }),
+    });
+
+    if (!r.ok) {
+      const body = await r.text();
+      console.error('Brevo participant sync failed:', r.status, body.slice(0, 300));
+    }
+  } catch (err) {
+    console.error('Brevo participant sync error:', err);
+  }
 }
