@@ -148,40 +148,55 @@ export default async function handler(req, res) {
   const { error, data } = validate(body);
   if (error) return res.status(400).json({ error });
 
-  if (!process.env.DATABASE_URL) {
-    console.error('DATABASE_URL is not set - run `vercel integration add neon` and redeploy.');
-    return res.status(503).json({ error: 'Service not configured' });
+  // O inscriere e "salvata" daca a ajuns in cel putin unul dintre cele trei
+  // locuri: baza noastra, emailul catre organizator sau Brevo. Pe planul
+  // gratuit Neon suspenda instanta dupa inactivitate si trezirea poate depasi
+  // timpul functiei, asa ca nu legam succesul doar de baza de date - altfel
+  // am pierde o inscriere reala din cauza unui cold start.
+  let savedToDb = false;
+  if (process.env.DATABASE_URL) {
+    try {
+      const sql = neon(process.env.DATABASE_URL);
+      await ensureTable(sql);
+      await sql`
+        INSERT INTO registrations (
+          first_name, last_name, country, whatsapp, email, package, accommodation,
+          roommate, stage_name, magic_society, category, dealer_upgrade,
+          store_name, website, comments, lang
+        ) VALUES (
+          ${data.first_name}, ${data.last_name}, ${data.country}, ${data.whatsapp},
+          ${data.email}, ${data.package}, ${data.accommodation}, ${data.roommate},
+          ${data.stage_name}, ${data.magic_society}, ${data.category},
+          ${data.dealer_upgrade}, ${data.store_name}, ${data.website},
+          ${data.comments}, ${data.lang}
+        )`;
+      savedToDb = true;
+    } catch (err) {
+      console.error('Registration insert failed:', err);
+    }
+  } else {
+    console.error('DATABASE_URL is not set.');
   }
 
-  try {
-    const sql = neon(process.env.DATABASE_URL);
-    await ensureTable(sql);
-    await sql`
-      INSERT INTO registrations (
-        first_name, last_name, country, whatsapp, email, package, accommodation,
-        roommate, stage_name, magic_society, category, dealer_upgrade,
-        store_name, website, comments, lang
-      ) VALUES (
-        ${data.first_name}, ${data.last_name}, ${data.country}, ${data.whatsapp},
-        ${data.email}, ${data.package}, ${data.accommodation}, ${data.roommate},
-        ${data.stage_name}, ${data.magic_society}, ${data.category},
-        ${data.dealer_upgrade}, ${data.store_name}, ${data.website},
-        ${data.comments}, ${data.lang}
-      )`;
-  } catch (err) {
-    console.error('Registration insert failed:', err);
-    return res.status(500).json({ error: 'Internal server error' });
-  }
-
-  // Email de notificare - best effort, nu blochează răspunsul de succes.
+  // Emailul catre organizator contine toate campurile, deci tine loc de
+  // copie de siguranta daca baza de date n-a raspuns.
+  let emailed = false;
   try {
     await notifyOrganizer(data);
+    emailed = true;
   } catch (err) {
     console.error('Organizer notification failed:', err);
   }
 
-  // Participantul ajunge si in Brevo, in lista din BREVO_PARTICIPANTS_LIST_ID.
-  await syncToBrevo(data);
+  const inBrevo = await syncToBrevo(data);
+
+  if (!savedToDb && !emailed && !inBrevo) {
+    console.error('Inscriere PIERDUTA - niciun canal nu a raspuns:', data.email);
+    return res.status(503).json({ error: 'Service temporarily unavailable' });
+  }
+  if (!savedToDb) {
+    console.error('Inscriere salvata DOAR prin email/Brevo (baza de date a esuat):', data.email);
+  }
 
   return res.status(200).json({ ok: true });
 }
@@ -191,7 +206,7 @@ export default async function handler(req, res) {
 async function syncToBrevo(d) {
   const apiKey = process.env.BREVO_API_KEY;
   const listId = Number(process.env.BREVO_PARTICIPANTS_LIST_ID);
-  if (!apiKey || !listId) return;
+  if (!apiKey || !listId) return false;
 
   try {
     const r = await fetch('https://api.brevo.com/v3/contacts', {
@@ -221,11 +236,13 @@ async function syncToBrevo(d) {
       }),
     });
 
-    if (!r.ok) {
-      const body = await r.text();
-      console.error('Brevo participant sync failed:', r.status, body.slice(0, 300));
-    }
+    if (r.ok) return true;
+
+    const body = await r.text();
+    console.error('Brevo participant sync failed:', r.status, body.slice(0, 300));
+    return false;
   } catch (err) {
     console.error('Brevo participant sync error:', err);
+    return false;
   }
 }

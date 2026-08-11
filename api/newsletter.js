@@ -56,42 +56,33 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Consent is required' });
   }
 
-  if (!process.env.DATABASE_URL) {
-    console.error('DATABASE_URL is not set - run `vercel integration add neon` and redeploy.');
-    return res.status(503).json({ error: 'Service not configured' });
-  }
+  // Brevo e sursa de adevar pentru newsletter - acolo se si trimit campaniile.
+  // Baza noastra Postgres e doar o copie: pe planul gratuit Neon suspenda
+  // instanta dupa inactivitate, iar trezirea poate depasi timpul functiei.
+  // Daca abonarea ar depinde de ea, formularul ar pica exact cand e liniste
+  // pe site, adica fix atunci cand vine un vizitator nou.
+  const savedToBrevo = await syncToBrevo(email, lang);
 
-  try {
-    const sql = neon(process.env.DATABASE_URL);
-    await sql`
-      CREATE TABLE IF NOT EXISTS newsletter_subscribers (
-        id serial PRIMARY KEY,
-        created_at timestamptz DEFAULT now(),
-        email text UNIQUE,
-        consent boolean,
-        lang text
-      )`;
-    // Abonare duplicată = tot succes (idempotent), fără a divulga că emailul există deja.
-    await sql`
-      INSERT INTO newsletter_subscribers (email, consent, lang)
-      VALUES (${email}, ${true}, ${lang})
-      ON CONFLICT (email) DO NOTHING`;
-  } catch (err) {
-    console.error('Newsletter insert failed:', err);
-    return res.status(500).json({ error: 'Internal server error' });
-  }
+  // Copie in baza proprie - best effort, nu blocheaza raspunsul.
+  saveToDatabase(email, lang).catch((err) =>
+    console.error('Newsletter DB copy failed:', err)
+  );
 
-  // Trimite abonatul si in Brevo, in lista din BREVO_LIST_ID.
-  // Baza noastra ramane sursa de adevar: daca Brevo cade, abonarea tot reuseste.
-  await syncToBrevo(email, lang);
+  if (!savedToBrevo) {
+    return res.status(503).json({ error: 'Service temporarily unavailable' });
+  }
 
   return res.status(200).json({ ok: true });
 }
 
+// Intoarce true daca abonatul a ajuns in Brevo.
 async function syncToBrevo(email, lang) {
   const apiKey = process.env.BREVO_API_KEY;
   const listId = Number(process.env.BREVO_LIST_ID);
-  if (!apiKey || !listId) return;
+  if (!apiKey || !listId) {
+    console.error('BREVO_API_KEY / BREVO_LIST_ID lipsesc.');
+    return false;
+  }
 
   try {
     const r = await fetch('https://api.brevo.com/v3/contacts', {
@@ -109,11 +100,32 @@ async function syncToBrevo(email, lang) {
       }),
     });
 
-    if (!r.ok) {
-      const body = await r.text();
-      console.error('Brevo sync failed:', r.status, body.slice(0, 300));
-    }
+    if (r.ok) return true;
+
+    const body = await r.text();
+    console.error('Brevo sync failed:', r.status, body.slice(0, 300));
+    // Contact deja existent in lista = tot succes pentru vizitator.
+    return r.status === 400 && body.includes('duplicate_parameter');
   } catch (err) {
     console.error('Brevo sync error:', err);
+    return false;
   }
+}
+
+async function saveToDatabase(email, lang) {
+  if (!process.env.DATABASE_URL) return;
+  const sql = neon(process.env.DATABASE_URL);
+  await sql`
+    CREATE TABLE IF NOT EXISTS newsletter_subscribers (
+      id serial PRIMARY KEY,
+      created_at timestamptz DEFAULT now(),
+      email text UNIQUE,
+      consent boolean,
+      lang text
+    )`;
+  // Abonare duplicata = tot succes (idempotent).
+  await sql`
+    INSERT INTO newsletter_subscribers (email, consent, lang)
+    VALUES (${email}, ${true}, ${lang})
+    ON CONFLICT (email) DO NOTHING`;
 }
