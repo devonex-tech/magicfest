@@ -29,7 +29,7 @@ html {
     content: '';
     position: absolute;
     inset: 0;
-    background: url('../images/night-sky.gif') center / cover;
+    background: url('../images/night-sky.webp') center / cover;
     opacity: 0.08;
     pointer-events: none;
 }
@@ -647,7 +647,7 @@ html {
     animation: stepIn 0.3s ease;
 }
 
-.package-info-box h4 {
+.package-info-box h3 {
     font-size: 13px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -718,7 +718,7 @@ html {
     margin-bottom: 20px;
 }
 
-.form-summary h4 {
+.form-summary h3 {
     font-size: 13px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -896,7 +896,7 @@ html {
     margin-bottom: 10px;
 }
 
-.newsletter-card h3 {
+.newsletter-card h2 {
     font-family: var(--font-heading);
     font-size: 26px;
     margin-bottom: 10px;
@@ -967,7 +967,7 @@ html {
     border-bottom: 1px solid var(--color-border-light);
 }
 
-.footer-newsletter-text h4 {
+.footer-newsletter-text h2 {
     font-family: var(--font-heading);
     font-size: 22px;
     margin-bottom: 8px;

@@ -7,15 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // ---- Preloader (doar pe pagina principală) ----
     const preloader = document.getElementById('preloader');
     if (preloader) {
+        const hidePreloader = () => preloader.classList.add('hidden');
         window.addEventListener('load', () => {
-            setTimeout(() => {
-                preloader.classList.add('hidden');
-            }, 800);
+            setTimeout(hidePreloader, 200);
         });
-        // Fallback: hide preloader after 3s
-        setTimeout(() => {
-            preloader.classList.add('hidden');
-        }, 3000);
+        // Plasa de siguranta: pe conexiuni lente nu tinem ecranul acoperit
+        // mai mult de 1,2s, altfel pagina pare blocata pe telefon.
+        setTimeout(hidePreloader, 1200);
     }
 
     // ---- Custom Cursor ----

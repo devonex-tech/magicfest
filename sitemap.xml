@@ -3,22 +3,22 @@
   <url>
     <loc>https://magicartfest.eu/</loc>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/"/>
   </url>
   <url>
-    <loc>https://magicartfest.eu/en/</loc>
+    <loc>https://magicartfest.eu/en</loc>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/"/>
   </url>
   <url>
-    <loc>https://magicartfest.eu/es/</loc>
+    <loc>https://magicartfest.eu/es</loc>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/"/>
   </url>
   <url>

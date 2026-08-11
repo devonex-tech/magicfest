@@ -79,3 +79,57 @@ Idei de îmbunătățire (cerute de client - de validat):
 3. Prețurile pachetelor - până atunci afișăm fără preț?
 4. Site-ul vechi e în RO/EN/ES - site-ul nou rămâne doar RO sau facem și EN?
 5. Newsletter: e ok popup cu delay în loc de popup imediat la intrare?
+
+---
+
+## 8. Magic Shop - siglele dealerilor (structură gata, conținut în așteptare)
+
+Secțiunea `#magicShop` de pe pagina principală (RO, `/en/`, `/es/`) conține o grilă
+responsivă de sigle. Cât timp grila e goală se afișează automat mesajul
+„Dealerii participanți se anunță în curând." (tradus în fiecare limbă). Mesajul
+dispare singur, prin CSS, în momentul în care apare prima siglă.
+
+**Cum adaugi o siglă** (o singură linie, în `index.html`, `en/index.html` și `es/index.html`,
+în interiorul `<div class="dealers-grid ...">`):
+
+```html
+<a class="dealer-logo" href="https://site-dealer.com" target="_blank" rel="noopener"><img src="/images/dealers/nume-dealer.png" alt="Nume Dealer" loading="lazy"></a>
+```
+
+Fără link către site-ul dealerului:
+
+```html
+<div class="dealer-logo"><img src="/images/dealers/nume-dealer.png" alt="Nume Dealer" loading="lazy"></div>
+```
+
+- Siglele se pun în `images/dealers/`.
+- Format recomandat: PNG sau SVG cu fundal transparent, aproximativ 400x200 px.
+- Grila ține confortabil 6-12 branduri și se reașază singură pe telefon.
+- Siglele se afișează alb-negru și se colorează la hover (doar cele cu link).
+
+## 9. Workshop & Lecture - lectorii ediției 2027 (structură gata, conținut în așteptare)
+
+Secțiunea `#lecturers2027` de pe pagina principală (RO, `/en/`, `/es/`) folosește
+aceleași componente ca secțiunea „Guest of Honor": poză rotundă, nume, țară, plus
+un paragraf de descriere. Cât timp grila e goală se afișează „Lectorii se anunță
+în curând." (tradus), iar mesajul dispare automat la primul lector adăugat.
+
+**Cum adaugi un lector** (blocul se copiază în interiorul `<div class="lecturers-grid ...">`,
+în toate cele 3 limbi; descrierea se traduce):
+
+```html
+<div class="lecturer-card">
+    <div class="artist-photo">
+        <img src="/images/lecturers/nume-lector.jpg" alt="Nume Lector" loading="lazy">
+    </div>
+    <div class="artist-photo-info">
+        <span class="artist-name">Nume Lector</span>
+        <span class="artist-country">🇰🇷 Coreea de Sud</span>
+    </div>
+    <p class="lecturer-bio">Paragraful de descriere al lectorului.</p>
+</div>
+```
+
+- Pozele se pun în `images/lecturers/`.
+- Format recomandat: JPG sau PNG pătrat, minim 400x400 px (se decupează rotund, aliniat sus).
+- Șabloanele de mai sus există și ca structură comentată direct în `index.html`, lângă fiecare grilă.
