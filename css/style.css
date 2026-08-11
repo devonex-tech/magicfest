@@ -2334,3 +2334,73 @@ button:disabled,
 [aria-disabled="true"] {
     cursor: not-allowed;
 }
+
+/* ---- Liste de text curent (reduceri, cazare) ----
+   .ticket-features are display:flex pe li, ceea ce rupe o propozitie cu
+   <strong> in coloane. Lista asta pastreaza textul ca text. */
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-list li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+}
+
+.info-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-gold);
+}
+
+.info-list strong {
+    color: var(--color-text);
+}
+
+/* ==========================================================================
+   Tinte de atins pe mobil
+   Degetul are nevoie de ~44px. Butonul de meniu, comutatorul de limba si
+   sublinkurile din meniu erau sub 30px, deci greu de nimerit.
+   ========================================================================== */
+@media (max-width: 992px) {
+    .nav-toggle {
+        width: 44px;
+        height: 44px;
+        justify-content: center;
+        align-items: center;
+        margin-right: -8px;
+    }
+
+    .nav-toggle span {
+        width: 26px;
+    }
+
+    .lang-switcher a,
+    .mobile-lang a {
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-link,
+    .mobile-sublink {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+}
