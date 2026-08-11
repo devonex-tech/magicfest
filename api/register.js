@@ -98,9 +98,11 @@ async function ensureTable(sql) {
 }
 
 // Notificare pe email prin Resend - opțională; eșecul ei nu afectează răspunsul.
+// Întoarce true DOAR dacă emailul chiar a plecat: valoarea asta e unul dintre
+// cele trei canale pe care le numărăm ca "înscrierea e salvată undeva".
 async function notifyOrganizer(d) {
   const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) return;
+  if (!apiKey) return false;
   const from = process.env.NOTIFY_FROM || 'onboarding@resend.dev';
   const text = [
     `Nume: ${d.first_name} ${d.last_name}`,
@@ -135,7 +137,9 @@ async function notifyOrganizer(d) {
   });
   if (!res.ok) {
     console.error('Resend notification failed:', res.status, await res.text().catch(() => ''));
+    return false;
   }
+  return true;
 }
 
 export default async function handler(req, res) {
@@ -194,8 +198,7 @@ export default async function handler(req, res) {
   // copie de siguranta daca baza de date n-a raspuns.
   let emailed = false;
   try {
-    await notifyOrganizer(data);
-    emailed = true;
+    emailed = await notifyOrganizer(data);
   } catch (err) {
     console.error('Organizer notification failed:', err);
   }
@@ -213,15 +216,50 @@ export default async function handler(req, res) {
   return res.status(200).json({ ok: true });
 }
 
-// Trimite participantul in Brevo. Best effort: baza noastra e sursa de adevar,
-// asa ca o eroare de la Brevo nu trebuie sa strice o inscriere deja salvata.
+// Brevo valideaza atributul WHATSAPP ca numar de telefon real si il trateaza ca
+// identificator unic. Doua situatii perfect normale il fac sa refuze contactul:
+//   - numar scris local ("0729 290 290", cum scrie majoritatea romanilor);
+//   - acelasi numar folosit deja de alt contact (sot/sotie, duo, agent).
+// In ambele cazuri Brevo raspunde cu eroare si participantul NU mai ajunge in
+// lista, desi vizitatorul vede "trimis cu succes". De aceea numarul asa cum a
+// fost scris merge intotdeauna in TELEFON (text simplu, fara validare), iar daca
+// Brevo refuza din cauza lui reincercam fara WHATSAPP - contactul in lista e mai
+// important decat campul de WhatsApp.
+function normalizePhone(raw) {
+  if (!raw) return '';
+  const plus = raw.trim().startsWith('+');
+  let digits = raw.replace(/\D/g, '');
+  if (!digits) return '';
+  if (digits.startsWith('00')) return '+' + digits.slice(2);
+  return plus ? '+' + digits : digits;
+}
+
 async function syncToBrevo(d) {
   const apiKey = process.env.BREVO_API_KEY;
   const listId = Number(process.env.BREVO_PARTICIPANTS_LIST_ID);
   if (!apiKey || !listId) return false;
 
-  try {
-    const r = await fetch('https://api.brevo.com/v3/contacts', {
+  const attributes = {
+    // FIRSTNAME/LASTNAME sunt atribute de sistem, Brevo le foloseste la
+    // personalizarea campaniilor. Le pastram si dublam in PRENUME/NUME,
+    // ca sa fie coloanele lizibile in romana in interfata.
+    FIRSTNAME: d.first_name,
+    LASTNAME: d.last_name,
+    PRENUME: d.first_name,
+    NUME: d.last_name,
+    TELEFON: d.whatsapp, // exact ce a scris omul - nu se pierde niciodata
+    TARA: d.country,
+    PACHET: d.package,
+    CAZARE: ACCOMMODATION_RO[d.accommodation] || d.accommodation,
+    CATEGORIE: CATEGORY_RO[d.category] || d.category,
+    NUME_SCENA: d.stage_name,
+    SOCIETATE: d.magic_society,
+    LIMBA: (d.lang || 'ro').toUpperCase(),
+    SURSA: 'inscriere magicartfest.eu',
+  };
+
+  const post = (attrs) =>
+    fetch('https://api.brevo.com/v3/contacts', {
       method: 'POST',
       headers: {
         'api-key': apiKey,
@@ -232,31 +270,29 @@ async function syncToBrevo(d) {
         email: d.email,
         listIds: [listId],
         updateEnabled: true, // contact existent = actualizat, nu eroare de duplicat
-        attributes: {
-          // FIRSTNAME/LASTNAME sunt atribute de sistem, Brevo le foloseste la
-          // personalizarea campaniilor. Le pastram si dublam in PRENUME/NUME,
-          // ca sa fie coloanele lizibile in romana in interfata.
-          FIRSTNAME: d.first_name,
-          LASTNAME: d.last_name,
-          PRENUME: d.first_name,
-          NUME: d.last_name,
-          WHATSAPP: d.whatsapp,
-          TARA: d.country,
-          PACHET: d.package,
-          CAZARE: ACCOMMODATION_RO[d.accommodation] || d.accommodation,
-          CATEGORIE: CATEGORY_RO[d.category] || d.category,
-          NUME_SCENA: d.stage_name,
-          SOCIETATE: d.magic_society,
-          LIMBA: (d.lang || 'ro').toUpperCase(),
-          SURSA: 'inscriere magicartfest.eu',
-        },
+        attributes: attrs,
       }),
     });
 
+  try {
+    const phone = normalizePhone(d.whatsapp);
+    const withPhone = phone ? { ...attributes, WHATSAPP: phone } : attributes;
+
+    let r = await post(withPhone);
     if (r.ok) return true;
 
     const body = await r.text();
     console.error('Brevo participant sync failed:', r.status, body.slice(0, 300));
+
+    // Reincercare fara WHATSAPP: numarul ramane in TELEFON, contactul intra in lista.
+    if (phone) {
+      r = await post(attributes);
+      if (r.ok) {
+        console.error('Brevo: contact adaugat fara WHATSAPP (numar respins):', d.email, d.whatsapp);
+        return true;
+      }
+      console.error('Brevo retry fara WHATSAPP a esuat:', r.status, (await r.text()).slice(0, 300));
+    }
     return false;
   } catch (err) {
     console.error('Brevo participant sync error:', err);
