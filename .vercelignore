@@ -1,0 +1,13 @@
+# Nu se publică pe site: sunt fișiere de lucru, nu conținut public.
+tools/
+.claude/
+.agents/
+MODIFICARI.md
+README.md
+skills-lock.json
+
+# Secretele nu au ce căuta în sursa deployment-ului. Nu sunt servite public,
+# dar fără linia asta ajung în arhiva pe care o vede oricine are acces la
+# proiectul din dashboard. Valorile reale stau în Environment Variables.
+.env
+.env.*
