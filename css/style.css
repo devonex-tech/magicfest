@@ -246,11 +246,14 @@ ul {
     display: flex;
     align-items: center;
     z-index: 1001;
+    /* Fara asta, meniul din dreapta comprima emblema pe orizontala si o turteste. */
+    flex-shrink: 0;
 }
 
 .nav-logo-img {
     height: 44px;
     width: auto;
+    flex-shrink: 0;
     transition: all var(--transition-base);
 }
 
