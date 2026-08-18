@@ -24,6 +24,13 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const PACKAGES = ['Full', 'Standard'];
 const ACCOMMODATIONS = ['With accommodation', 'Without accommodation'];
 const CATEGORIES = ['Stage', 'Close-Up', 'None'];
+const PAYMENT_CHOICES = ['now', 'later'];
+
+// Ce scrie organizatorul in tabel si in email, nu ce trimite formularul.
+const PAYMENT_CHOICE_RO = {
+  now: 'Plateste acum (Stripe)',
+  later: 'Plateste mai tarziu',
+};
 
 // Formularul trimite valorile in engleza (sunt aceleasi pentru toate limbile
 // site-ului). In Brevo le scriem in romana, ca sa fie citibile de organizator.
@@ -61,6 +68,7 @@ function validate(body) {
     website: clean(body.website, 500),
     comments: clean(body.comments, 2000),
     lang: clean(body.lang, 10),
+    payment_choice: clean(body.payment_choice, 10),
   };
 
   if (!d.first_name || !d.last_name || !d.country || !d.whatsapp || !d.stage_name) {
@@ -70,6 +78,7 @@ function validate(body) {
   if (!PACKAGES.includes(d.package)) return { error: 'Invalid package' };
   if (!ACCOMMODATIONS.includes(d.accommodation)) return { error: 'Invalid accommodation option' };
   if (!CATEGORIES.includes(d.category)) return { error: 'Invalid category' };
+  if (!PAYMENT_CHOICES.includes(d.payment_choice)) d.payment_choice = 'now';
   return { data: d };
 }
 
@@ -93,8 +102,12 @@ async function ensureTable(sql) {
       store_name text,
       website text,
       comments text,
-      lang text
+      lang text,
+      payment_choice text
     )`;
+  // Tabelul exista deja din inscrierile de dinainte de butonul "platesc mai
+  // tarziu", iar CREATE TABLE IF NOT EXISTS nu l-ar completa.
+  await sql`ALTER TABLE registrations ADD COLUMN IF NOT EXISTS payment_choice text`;
 }
 
 // Notificare pe email prin Resend - opțională; eșecul ei nu afectează răspunsul.
@@ -120,6 +133,7 @@ async function notifyOrganizer(d) {
     `Website: ${d.website || '-'}`,
     `Comentarii: ${d.comments || '-'}`,
     `Limbă formular: ${d.lang || '-'}`,
+    `Plată: ${PAYMENT_CHOICE_RO[d.payment_choice] || d.payment_choice}`,
   ].join('\n');
 
   const res = await fetch('https://api.resend.com/emails', {
@@ -178,13 +192,13 @@ export default async function handler(req, res) {
         INSERT INTO registrations (
           first_name, last_name, country, whatsapp, email, package, accommodation,
           roommate, stage_name, magic_society, category, dealer_upgrade,
-          store_name, website, comments, lang
+          store_name, website, comments, lang, payment_choice
         ) VALUES (
           ${data.first_name}, ${data.last_name}, ${data.country}, ${data.whatsapp},
           ${data.email}, ${data.package}, ${data.accommodation}, ${data.roommate},
           ${data.stage_name}, ${data.magic_society}, ${data.category},
           ${data.dealer_upgrade}, ${data.store_name}, ${data.website},
-          ${data.comments}, ${data.lang}
+          ${data.comments}, ${data.lang}, ${data.payment_choice}
         )`;
       savedToDb = true;
     } catch (err) {

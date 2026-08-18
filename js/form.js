@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const termsBox = document.getElementById('f-terms');
     const termsError = document.getElementById('termsError');
     const honeypot = form.querySelector('input[name="maf_hp_2"]');
+    const payLaterWrap = document.getElementById('formPayLaterWrap');
+    const payLaterBtn = document.getElementById('formPayLater');
     const i18nEl = document.getElementById('mafFormI18n');
 
     if (!steps.length || !backBtn || !nextBtn || !status || !i18nEl) return;
@@ -68,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         backBtn.style.visibility = n === 1 ? 'hidden' : 'visible';
         nextLabel.textContent = n === TOTAL_STEPS ? i18n.send : nextDefaultText;
+        if (payLaterWrap) payLaterWrap.style.display = n === TOTAL_STEPS ? 'block' : 'none';
 
         if (n === TOTAL_STEPS) {
             buildSummary();
@@ -196,11 +199,21 @@ document.addEventListener('DOMContentLoaded', () => {
         if (type) status.classList.add(type);
     }
 
-    function onSuccess() {
-        setStatus(i18n.success, 'success');
+    // Inscrierea e salvata in ambele cazuri. Difera doar ce urmeaza: plata
+    // acum inseamna Stripe, plata mai tarziu inseamna ca organizatorul ia
+    // legatura. Nu blocam locul dupa plata - altfel am pierde oamenii care
+    // vor sa plateasca prin transfer sau la fata locului.
+    function onSuccess(payNow) {
         const nav = form.querySelector('.form-nav');
         if (nav) nav.style.display = 'none';
-        goToPayment();
+        if (payLaterWrap) payLaterWrap.style.display = 'none';
+
+        if (payNow) {
+            setStatus(i18n.success, 'success');
+            goToPayment();
+        } else {
+            setStatus(i18n.pay_later_ok || i18n.success, 'success');
+        }
     }
 
     // Inscrierea e deja salvata in acest punct. Daca plata nu poate fi
@@ -231,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function submitForm() {
+    function submitForm(payNow) {
         if (sending) return;
 
         if (!termsBox || !termsBox.checked) {
@@ -251,7 +264,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         sending = true;
         nextBtn.disabled = true;
-        nextLabel.textContent = i18n.sending;
+        if (payLaterBtn) payLaterBtn.disabled = true;
+
+        // Semnalul "se trimite" merge pe butonul chiar apasat, ca omul sa vada
+        // ca a fost inregistrat clicul lui, nu al celuilalt buton.
+        const busyLabel = payNow || !payLaterBtn ? nextLabel : payLaterBtn;
+        const busyText = busyLabel.textContent;
+        busyLabel.textContent = i18n.sending;
         setStatus('', null);
 
         const payload = {
@@ -270,7 +289,8 @@ document.addEventListener('DOMContentLoaded', () => {
             store_name: fieldValue('store_name'),
             website: fieldValue('website'),
             comments: fieldValue('comments'),
-            lang: i18n.lang
+            lang: i18n.lang,
+            payment_choice: payNow ? 'now' : 'later'
         };
 
         fetch('/api/register', {
@@ -279,7 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify(payload)
         }).then((res) => {
             if (res.ok) {
-                onSuccess();
+                onSuccess(payNow);
             } else {
                 onError();
             }
@@ -289,20 +309,27 @@ document.addEventListener('DOMContentLoaded', () => {
             sending = false;
             setStatus(i18n.error, 'error');
             nextBtn.disabled = false;
-            nextLabel.textContent = i18n.send;
+            if (payLaterBtn) payLaterBtn.disabled = false;
+            busyLabel.textContent = busyText;
         }
     }
 
     // ---- Butoane ----
     nextBtn.addEventListener('click', () => {
         if (currentStep === TOTAL_STEPS) {
-            submitForm();
+            submitForm(true);
             return;
         }
         if (validateStep(currentStep)) {
             goToStep(currentStep + 1);
         }
     });
+
+    if (payLaterBtn) {
+        payLaterBtn.addEventListener('click', () => {
+            if (currentStep === TOTAL_STEPS) submitForm(false);
+        });
+    }
 
     backBtn.addEventListener('click', () => {
         if (currentStep > 1 && !sending) {
