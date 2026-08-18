@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
         var payload = params || {};
         payload.page_lang = pageLang();
         payload.page_path = window.location.pathname;
-        if (analyticsOn && loaded) {
+        if (loaded) {
             try { window.gtag('event', name, payload); } catch (e) { /* nu rupem niciodată pagina */ }
         } else if (queue.length < MAX_QUEUE) {
             queue.push([name, payload]);
@@ -231,7 +231,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    /* ---- 3. Încărcarea scripturilor, doar cu acord ---- */
+    /* ---- 3. Incarcarea scripturilor ----
+       GA4 se incarca la TOATA lumea, in modul avansat de Consent Mode v2:
+       pana la acceptare nu scrie niciun cookie si trimite doar semnale
+       anonime, din care Google modeleaza traficul. Asa nu mai pierdem
+       vizitatorii care nu apasa nimic in banner - problema din care alt
+       site al aceluiasi proprietar raporta 4 sesiuni pe luna in loc de 1300.
+       Clarity ramane strict dupa acord: inregistreaza sesiuni, deci fara
+       acord ar fi supraveghere. */
 
     function loadGA4() {
         if (document.getElementById('maf-ga4')) return;
@@ -275,11 +282,13 @@ document.addEventListener('DOMContentLoaded', () => {
         loadClarity();
         loaded = true;
         flushQueue();
+        // GA4 ruleaza deja; aici doar trece pe cookie-uri si porneste Clarity
     }
 
     function revoke() {
         analyticsOn = false;
-        loaded = false;
+        // GA4 ramane incarcat, dar fara cookie-uri (modul avansat);
+        // Clarity nu se mai incarca la urmatoarea pagina
         queue = [];
         try {
             window.gtag('consent', 'update', {
@@ -290,6 +299,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         } catch (e) { /* ignorat */ }
     }
+
+    /* GA4 pleaca imediat, cu stocarea refuzata pana la acord */
+    loadGA4();
+    loaded = true;
+    flushQueue();
 
     document.addEventListener('maf:consent', function (e) {
         var d = e.detail || {};
