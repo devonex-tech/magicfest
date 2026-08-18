@@ -54,7 +54,7 @@ function csv(rows, columns) {
   return '﻿' + lines.join('\r\n'); // BOM ca Excel să deschidă diacriticele corect
 }
 
-const REG_COLS = ['id', 'created_at', 'first_name', 'last_name', 'country', 'whatsapp', 'email', 'package', 'accommodation', 'roommate', 'stage_name', 'magic_society', 'category', 'dealer_upgrade', 'store_name', 'website', 'comments', 'lang', 'payment_choice'];
+const REG_COLS = ['id', 'created_at', 'first_name', 'last_name', 'country', 'whatsapp', 'email', 'package', 'accommodation', 'roommate', 'stage_name', 'magic_society', 'category', 'dealer_upgrade', 'store_name', 'website', 'comments', 'lang', 'payment_choice', 'paid_at', 'paid_amount', 'stripe_session_id'];
 const NL_COLS = ['id', 'created_at', 'email', 'consent', 'lang'];
 
 const RO_DATE = new Intl.DateTimeFormat('ro-RO', { dateStyle: 'short', timeStyle: 'short', timeZone: 'Europe/Bucharest' });
@@ -66,7 +66,9 @@ function page(regs, subs) {
     <td>${esc(r.country)}</td>
     <td>${esc(r.email)}<br><span class="dim">${esc(r.whatsapp)}</span></td>
     <td><span class="badge ${r.package === 'Full' ? 'gold' : ''}">${esc(r.package)}</span></td>
-    <td>${r.payment_choice === 'later' ? 'Mai târziu' : 'Online'}</td>
+    <td>${r.paid_at
+      ? `<span class="badge gold">Plătit</span>${r.paid_amount ? `<br><span class="dim">${esc(r.paid_amount)} EUR</span>` : ''}`
+      : (r.payment_choice === 'later' ? 'Mai târziu' : 'În așteptare')}</td>
     <td>${r.accommodation === 'With accommodation' ? 'Cu cazare' : 'Fără cazare'}${r.roommate ? `<br><span class="dim">Coleg: ${esc(r.roommate)}</span>` : ''}</td>
     <td>${r.category === 'None' ? ' - ' : esc(r.category)}</td>
     <td>${r.dealer_upgrade === 'Yes' ? `Da${r.store_name ? ` - ${esc(r.store_name)}` : ''}` : ' - '}</td>

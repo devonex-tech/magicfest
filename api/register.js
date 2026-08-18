@@ -1,5 +1,6 @@
 // POST /api/register - salvează o înscriere în Neon Postgres și (opțional) notifică organizatorul prin Resend.
 import { neon } from '@neondatabase/serverless';
+import { PLATA, ensureBrevoAttributes, brevoUpsert } from './_brevo.js';
 
 // --- Rate limiting simplu în memorie, per IP ---
 // NOTĂ: best-effort - Map-ul trăiește doar cât trăiește instanța funcției serverless
@@ -253,6 +254,11 @@ async function syncToBrevo(d) {
   const listId = Number(process.env.BREVO_PARTICIPANTS_LIST_ID);
   if (!apiKey || !listId) return false;
 
+  // Atributele de plata trebuie sa existe in cont inainte de contact, altfel
+  // Brevo respinge tot contactul. Esecul crearii lor NU opreste inscrierea:
+  // reincercarile de mai jos trimit contactul si fara coloana noua.
+  await ensureBrevoAttributes(apiKey);
+
   const attributes = {
     // FIRSTNAME/LASTNAME sunt atribute de sistem, Brevo le foloseste la
     // personalizarea campaniilor. Le pastram si dublam in PRENUME/NUME,
@@ -272,40 +278,39 @@ async function syncToBrevo(d) {
     SURSA: 'inscriere magicartfest.eu',
   };
 
-  const post = (attrs) =>
-    fetch('https://api.brevo.com/v3/contacts', {
-      method: 'POST',
-      headers: {
-        'api-key': apiKey,
-        'content-type': 'application/json',
-        accept: 'application/json',
-      },
-      body: JSON.stringify({
-        email: d.email,
-        listIds: [listId],
-        updateEnabled: true, // contact existent = actualizat, nu eroare de duplicat
-        attributes: attrs,
-      }),
-    });
+  // Starea platii, asa cum o vede organizatorul in Brevo. La inscriere nu
+  // exista inca nicio plata confirmata, deci DATA_PLATA si SUMA_PLATITA raman
+  // goale; le completeaza /api/payment-confirm cand Stripe confirma.
+  const paymentAttributes = {
+    PLATA: d.payment_choice === 'later' ? PLATA.MAI_TARZIU : PLATA.ASTEPTARE,
+  };
+
+  const post = (attrs) => brevoUpsert(apiKey, d.email, listId, attrs);
 
   try {
     const phone = normalizePhone(d.whatsapp);
-    const withPhone = phone ? { ...attributes, WHATSAPP: phone } : attributes;
+    const withPayment = { ...attributes, ...paymentAttributes };
 
-    let r = await post(withPhone);
-    if (r.ok) return true;
+    // Incercam de la cel mai complet spre cel mai sigur si ne oprim la prima
+    // reusita. Doua lucruri pot face Brevo sa refuze contactul: numarul de
+    // telefon (vezi explicatia de mai sus) si atributul PLATA, daca nu a putut
+    // fi creat in cont. Nu stim care dintre ele, asa ca le scoatem pe rand.
+    const attempts = [];
+    if (phone) attempts.push({ label: 'complet', attrs: { ...withPayment, WHATSAPP: phone } });
+    attempts.push({ label: 'fara WHATSAPP', attrs: withPayment });
+    if (phone) attempts.push({ label: 'fara PLATA', attrs: { ...attributes, WHATSAPP: phone } });
+    attempts.push({ label: 'fara WHATSAPP si fara PLATA', attrs: attributes });
 
-    const body = await r.text();
-    console.error('Brevo participant sync failed:', r.status, body.slice(0, 300));
-
-    // Reincercare fara WHATSAPP: numarul ramane in TELEFON, contactul intra in lista.
-    if (phone) {
-      r = await post(attributes);
+    for (let i = 0; i < attempts.length; i += 1) {
+      const r = await post(attempts[i].attrs);
       if (r.ok) {
-        console.error('Brevo: contact adaugat fara WHATSAPP (numar respins):', d.email, d.whatsapp);
+        if (i > 0) {
+          console.error('Brevo: contact adaugat', attempts[i].label, '-', d.email);
+        }
         return true;
       }
-      console.error('Brevo retry fara WHATSAPP a esuat:', r.status, (await r.text()).slice(0, 300));
+      const body = await r.text().catch(() => '');
+      console.error('Brevo participant sync failed (' + attempts[i].label + '):', r.status, body.slice(0, 300));
     }
     return false;
   } catch (err) {

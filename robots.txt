@@ -1,6 +1,10 @@
-# Crawlere care doar consuma banda: iau continutul pentru antrenament si nu
-# trimit niciun vizitator inapoi. Unul dintre ele (meta-externalagent) a tras
-# 292 GB de pe un site vecin in 4 zile si a suspendat contul de gazduire.
+# ============================================================
+# magicartfest.eu - robots.txt
+# ============================================================
+
+# ---- Crawlere care doar consumă bandă: iau conținutul pentru antrenament și
+# nu trimit niciun vizitator înapoi. Unul dintre ele (meta-externalagent) a tras
+# 292 GB de pe un site vecin în 4 zile și a suspendat contul de găzduire.
 User-agent: meta-externalagent
 Disallow: /
 
@@ -28,34 +32,98 @@ Disallow: /
 User-agent: Omgilibot
 Disallow: /
 
-# Crawlerele care CITEAZA sursa raman permise: aduc oameni la festival cand
-# cineva intreaba un asistent AI despre magie in Romania.
+# ---- Crawlerele care CITEAZĂ sursa rămân permise: aduc oameni la festival
+# când cineva întreabă un asistent AI despre magie în România.
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /api/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /api/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /api/
 
 User-agent: Perplexity-User
 Allow: /
+Disallow: /api/
 
 User-agent: Claude-User
 Allow: /
+Disallow: /api/
 
 User-agent: Claude-SearchBot
 Allow: /
+Disallow: /api/
 
+# ---- Motoarele de căutare clasice. Fiecare bot cu grup propriu ignoră grupul
+# "*", deci /api/ se repetă aici, iar resursele de randare (CSS, JS, imagini,
+# video) sunt permise explicit ca să nu fie blocate din greșeală.
 User-agent: Googlebot
 Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /videos/
+Disallow: /api/
+
+User-agent: Googlebot-Image
+Allow: /
+Allow: /images/
+Disallow: /api/
+
+User-agent: Googlebot-Video
+Allow: /
+Allow: /videos/
+Disallow: /api/
+
+User-agent: Googlebot-News
+Allow: /
+Disallow: /api/
+
+User-agent: Storebot-Google
+Allow: /
+Disallow: /api/
+
+User-agent: Google-InspectionTool
+Allow: /
+Disallow: /api/
 
 User-agent: Bingbot
 Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /videos/
+Disallow: /api/
 
+User-agent: msnbot-media
+Allow: /
+Allow: /images/
+Allow: /videos/
+Disallow: /api/
+
+User-agent: Applebot
+Allow: /
+Disallow: /api/
+
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /api/
+
+User-agent: YandexBot
+Allow: /
+Disallow: /api/
+
+# ---- Restul crawlerelor
 User-agent: *
 Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /videos/
 Disallow: /api/
 
 Sitemap: https://magicartfest.eu/sitemap.xml

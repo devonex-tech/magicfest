@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://magicartfest.eu/</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es"/>
@@ -9,6 +14,9 @@
   </url>
   <url>
     <loc>https://magicartfest.eu/en</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es"/>
@@ -16,6 +24,9 @@
   </url>
   <url>
     <loc>https://magicartfest.eu/es</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es"/>
@@ -23,6 +34,9 @@
   </url>
   <url>
     <loc>https://magicartfest.eu/gala-show</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/gala-show"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/gala-show"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/gala-show"/>
@@ -30,6 +44,9 @@
   </url>
   <url>
     <loc>https://magicartfest.eu/en/gala-show</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/gala-show"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/gala-show"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/gala-show"/>
@@ -37,6 +54,9 @@
   </url>
   <url>
     <loc>https://magicartfest.eu/es/gala-show</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/gala-show"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/gala-show"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/gala-show"/>
@@ -44,6 +64,9 @@
   </url>
   <url>
     <loc>https://magicartfest.eu/competitie</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/competitie"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/competitie"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/competitie"/>
@@ -51,6 +74,9 @@
   </url>
   <url>
     <loc>https://magicartfest.eu/en/competitie</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/competitie"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/competitie"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/competitie"/>
@@ -58,6 +84,9 @@
   </url>
   <url>
     <loc>https://magicartfest.eu/es/competitie</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/competitie"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/competitie"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/competitie"/>
@@ -65,6 +94,9 @@
   </url>
   <url>
     <loc>https://magicartfest.eu/inscriere</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/inscriere"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/inscriere"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/inscriere"/>
@@ -72,6 +104,9 @@
   </url>
   <url>
     <loc>https://magicartfest.eu/en/inscriere</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/inscriere"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/inscriere"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/inscriere"/>
@@ -79,6 +114,9 @@
   </url>
   <url>
     <loc>https://magicartfest.eu/es/inscriere</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/inscriere"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/inscriere"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/inscriere"/>
@@ -86,6 +124,9 @@
   </url>
   <url>
     <loc>https://magicartfest.eu/bilete</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/bilete"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/bilete"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/bilete"/>
@@ -93,6 +134,9 @@
   </url>
   <url>
     <loc>https://magicartfest.eu/en/bilete</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/bilete"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/bilete"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/bilete"/>
@@ -100,13 +144,364 @@
   </url>
   <url>
     <loc>https://magicartfest.eu/es/bilete</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/bilete"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/bilete"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/bilete"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/bilete"/>
   </url>
   <url>
+    <loc>https://magicartfest.eu/editia-2026/castigatori</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/castigatori"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/castigatori"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/castigatori"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/castigatori"/>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/winners/tony-vasil.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/winners/bojidar-kolev.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/winners/iulian-paraschiv.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://magicartfest.eu/en/editia-2026/castigatori</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/castigatori"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/castigatori"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/castigatori"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/castigatori"/>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/winners/tony-vasil.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/winners/bojidar-kolev.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/winners/iulian-paraschiv.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://magicartfest.eu/es/editia-2026/castigatori</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/castigatori"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/castigatori"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/castigatori"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/castigatori"/>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/winners/tony-vasil.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/winners/bojidar-kolev.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/winners/iulian-paraschiv.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://magicartfest.eu/editia-2026/invitati</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/invitati"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/invitati"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/invitati"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/invitati"/>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/kimoon-do.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/jeki-yoo.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/gabriel-gascon.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/piksi.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/teatro-blu-magic.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/eduard-bianca.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://magicartfest.eu/en/editia-2026/invitati</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/invitati"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/invitati"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/invitati"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/invitati"/>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/kimoon-do.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/jeki-yoo.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/gabriel-gascon.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/piksi.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/teatro-blu-magic.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/eduard-bianca.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://magicartfest.eu/es/editia-2026/invitati</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/invitati"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/invitati"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/invitati"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/invitati"/>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/kimoon-do.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/jeki-yoo.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/gabriel-gascon.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/piksi.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/teatro-blu-magic.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/eduard-bianca.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://magicartfest.eu/editia-2026/juriu</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/juriu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/juriu"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/juriu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/juriu"/>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/xavier-tapias.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/serge-odin.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/lee.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/christianis-president.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://magicartfest.eu/en/editia-2026/juriu</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/juriu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/juriu"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/juriu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/juriu"/>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/xavier-tapias.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/serge-odin.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/lee.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/christianis-president.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://magicartfest.eu/es/editia-2026/juriu</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/juriu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/juriu"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/juriu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/juriu"/>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/xavier-tapias.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/serge-odin.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/lee.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/christianis-president.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://magicartfest.eu/editia-2026/galerie</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/galerie"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/galerie"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/galerie"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/galerie"/>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-01.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-02.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-03.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-04.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-05.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-06.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-07.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-08.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-09.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-10.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-11.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-12.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://magicartfest.eu/en/editia-2026/galerie</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/galerie"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/galerie"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/galerie"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/galerie"/>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-01.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-02.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-03.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-04.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-05.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-06.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-07.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-08.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-09.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-10.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-11.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-12.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://magicartfest.eu/es/editia-2026/galerie</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/galerie"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/galerie"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/galerie"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/galerie"/>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-01.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-02.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-03.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-04.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-05.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-06.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-07.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-08.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-09.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-10.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-11.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://magicartfest.eu/images/galerie-2026/galerie-2026-12.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://magicartfest.eu/faq</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/faq"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/faq"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/faq"/>
@@ -114,6 +509,9 @@
   </url>
   <url>
     <loc>https://magicartfest.eu/en/faq</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/faq"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/faq"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/faq"/>
@@ -121,6 +519,9 @@
   </url>
   <url>
     <loc>https://magicartfest.eu/es/faq</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/faq"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/faq"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/faq"/>
@@ -128,6 +529,9 @@
   </url>
   <url>
     <loc>https://magicartfest.eu/contact</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/contact"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/contact"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/contact"/>
@@ -135,6 +539,9 @@
   </url>
   <url>
     <loc>https://magicartfest.eu/en/contact</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/contact"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/contact"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/contact"/>
@@ -142,93 +549,12 @@
   </url>
   <url>
     <loc>https://magicartfest.eu/es/contact</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/contact"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/contact"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/contact"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/contact"/>
-  </url>
-  <url>
-    <loc>https://magicartfest.eu/editia-2026/castigatori</loc>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/castigatori"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/castigatori"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/castigatori"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/castigatori"/>
-  </url>
-  <url>
-    <loc>https://magicartfest.eu/en/editia-2026/castigatori</loc>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/castigatori"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/castigatori"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/castigatori"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/castigatori"/>
-  </url>
-  <url>
-    <loc>https://magicartfest.eu/es/editia-2026/castigatori</loc>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/castigatori"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/castigatori"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/castigatori"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/castigatori"/>
-  </url>
-  <url>
-    <loc>https://magicartfest.eu/editia-2026/invitati</loc>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/invitati"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/invitati"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/invitati"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/invitati"/>
-  </url>
-  <url>
-    <loc>https://magicartfest.eu/en/editia-2026/invitati</loc>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/invitati"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/invitati"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/invitati"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/invitati"/>
-  </url>
-  <url>
-    <loc>https://magicartfest.eu/es/editia-2026/invitati</loc>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/invitati"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/invitati"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/invitati"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/invitati"/>
-  </url>
-  <url>
-    <loc>https://magicartfest.eu/editia-2026/juriu</loc>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/juriu"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/juriu"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/juriu"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/juriu"/>
-  </url>
-  <url>
-    <loc>https://magicartfest.eu/en/editia-2026/juriu</loc>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/juriu"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/juriu"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/juriu"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/juriu"/>
-  </url>
-  <url>
-    <loc>https://magicartfest.eu/es/editia-2026/juriu</loc>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/juriu"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/juriu"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/juriu"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/juriu"/>
-  </url>
-  <url>
-    <loc>https://magicartfest.eu/editia-2026/galerie</loc>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/galerie"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/galerie"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/galerie"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/galerie"/>
-  </url>
-  <url>
-    <loc>https://magicartfest.eu/en/editia-2026/galerie</loc>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/galerie"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/galerie"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/galerie"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/galerie"/>
-  </url>
-  <url>
-    <loc>https://magicartfest.eu/es/editia-2026/galerie</loc>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/editia-2026/galerie"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/editia-2026/galerie"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/editia-2026/galerie"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/editia-2026/galerie"/>
   </url>
 </urlset>
