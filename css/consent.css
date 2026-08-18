@@ -1,0 +1,335 @@
+/* ============================================
+   MagicArt Fest - Consimtamant cookie-uri
+   Incarcat dinamic din /js/consent.js
+   ============================================ */
+
+.maf-cc,
+.maf-cc * {
+    box-sizing: border-box;
+}
+
+/* ---- Bara de jos ---- */
+.maf-cc-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9998;
+    background: #16161A;
+    border-top: 1px solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.55);
+    font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    color: #F0F0F2;
+    padding: 18px 20px calc(18px + env(safe-area-inset-bottom, 0px));
+    transform: translateY(110%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.maf-cc-bar.is-open {
+    transform: translateY(0);
+}
+
+.maf-cc-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px 28px;
+}
+
+.maf-cc-text {
+    flex: 1 1 380px;
+    min-width: 260px;
+}
+
+.maf-cc-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 6px;
+    color: #D4AF37;
+}
+
+.maf-cc-desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin: 0;
+    color: #B0B0BA;
+}
+
+.maf-cc-desc a {
+    color: #D4AF37;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.maf-cc-desc a:hover,
+.maf-cc-desc a:focus-visible {
+    color: #E8CC6E;
+}
+
+/* ---- Actiuni: cele trei butoane au metrici IDENTICE ---- */
+.maf-cc-actions {
+    flex: 0 1 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(170px, 1fr));
+    gap: 12px;
+}
+
+.maf-cc-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    min-width: 152px;
+    padding: 12px 22px;
+    font-family: inherit;
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid #D4AF37;
+    background: rgba(212, 175, 55, 0.12);
+    color: #E8CC6E;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.maf-cc-btn:hover {
+    background: #D4AF37;
+    color: #0A0A0B;
+    transform: translateY(-1px);
+}
+
+.maf-cc-btn:focus-visible,
+.maf-cc-close:focus-visible,
+.maf-cc-switch:focus-visible {
+    outline: 3px solid #A66BF0;
+    outline-offset: 2px;
+}
+
+/*
+   Cat timp vizitatorul nu a ales inca, nu lasam alte ferestre modale sa se
+   suprapuna peste bara de consimtamant. Popup-ul de newsletter reapare imediat
+   dupa alegere, cu propria lui logica, neatinsa.
+*/
+html.maf-cc-pending .newsletter-popup {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+/* ---- Panoul de preferinte ---- */
+.maf-cc-panel {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(5, 5, 6, 0.78);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    color: #F0F0F2;
+}
+
+.maf-cc-panel.is-open {
+    display: flex;
+}
+
+.maf-cc-card {
+    width: 100%;
+    max-width: 620px;
+    max-height: 88vh;
+    overflow-y: auto;
+    background: #111113;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 12px;
+    padding: 30px 30px 26px;
+    position: relative;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.maf-cc-card h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 8px;
+    color: #D4AF37;
+    padding-right: 44px;
+}
+
+.maf-cc-card > p {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: #B0B0BA;
+    margin: 0 0 22px;
+}
+
+.maf-cc-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    background: transparent;
+    color: #B0B0BA;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.maf-cc-close:hover {
+    color: #D4AF37;
+    border-color: #D4AF37;
+}
+
+.maf-cc-group {
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 8px;
+    padding: 18px 18px 16px;
+    margin-bottom: 14px;
+    background: #16161A;
+}
+
+.maf-cc-group-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.maf-cc-group-title {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #F0F0F2;
+    margin: 0;
+}
+
+.maf-cc-group p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #8E8E9A;
+    margin: 0;
+}
+
+.maf-cc-always {
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #D4AF37;
+    white-space: nowrap;
+}
+
+/* ---- Comutator, operabil de la tastatura ---- */
+.maf-cc-switch {
+    position: relative;
+    flex: 0 0 auto;
+    width: 58px;
+    height: 32px;
+    padding: 0;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: #2A2A31;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.maf-cc-switch::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #8E8E9A;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.maf-cc-switch[aria-checked="true"] {
+    background: rgba(212, 175, 55, 0.28);
+    border-color: #D4AF37;
+}
+
+.maf-cc-switch[aria-checked="true"]::after {
+    transform: translateX(26px);
+    background: #D4AF37;
+}
+
+.maf-cc-panel-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.maf-cc-panel-links {
+    margin-top: 18px;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: #8E8E9A;
+}
+
+.maf-cc-panel-links a {
+    color: #D4AF37;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* ---- Mobil ---- */
+@media (max-width: 860px) {
+    .maf-cc-inner {
+        gap: 16px;
+    }
+
+    .maf-cc-actions {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .maf-cc-panel-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .maf-cc-btn {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .maf-cc-bar {
+        padding: 16px 16px calc(16px + env(safe-area-inset-bottom, 0px));
+        max-height: 82vh;
+        overflow-y: auto;
+    }
+
+    .maf-cc-card {
+        padding: 26px 20px 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .maf-cc-bar,
+    .maf-cc-btn,
+    .maf-cc-switch,
+    .maf-cc-switch::after {
+        transition: none;
+    }
+}

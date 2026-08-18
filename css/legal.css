@@ -1,0 +1,191 @@
+/* ============================================
+   MagicArt Fest - Pagini legale (prose)
+   ============================================ */
+
+.legal {
+    padding: 70px 0 110px;
+}
+
+.legal-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.legal-updated {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 7px 16px;
+    margin-bottom: 30px;
+}
+
+.legal-intro {
+    font-size: 16.5px;
+    line-height: 1.8;
+    color: var(--color-text);
+    padding: 20px 22px;
+    border-left: 3px solid var(--color-gold);
+    background: var(--color-bg-card);
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 40px;
+}
+
+.legal-wrap h2 {
+    font-family: var(--font-heading);
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-gold);
+    margin: 46px 0 14px;
+}
+
+.legal-wrap h2:first-of-type {
+    margin-top: 0;
+}
+
+.legal-wrap h3 {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 26px 0 10px;
+}
+
+.legal-wrap p {
+    font-size: 15.5px;
+    line-height: 1.85;
+    color: var(--color-text-muted);
+    margin: 0 0 16px;
+}
+
+.legal-wrap ul,
+.legal-wrap ol {
+    margin: 0 0 20px;
+    padding-left: 22px;
+}
+
+.legal-wrap li {
+    font-size: 15.5px;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: 9px;
+}
+
+.legal-wrap strong {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+.legal-wrap a {
+    color: var(--color-gold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.legal-wrap a:hover,
+.legal-wrap a:focus-visible {
+    color: var(--color-gold-light);
+}
+
+.legal-wrap a:focus-visible,
+.legal-inline-btn:focus-visible {
+    outline: 3px solid var(--color-purple-light);
+    outline-offset: 2px;
+}
+
+.legal-inline-btn {
+    font: inherit;
+    font-size: 15.5px;
+    color: var(--color-gold);
+    background: none;
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.legal-inline-btn:hover {
+    color: var(--color-gold-light);
+}
+
+.legal-box {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--border-radius-sm);
+    padding: 22px 24px;
+    margin: 0 0 24px;
+}
+
+.legal-box p:last-child,
+.legal-box ul:last-child {
+    margin-bottom: 0;
+}
+
+.legal-table-wrap {
+    overflow-x: auto;
+    margin: 0 0 28px;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--border-radius-sm);
+}
+
+.legal-table {
+    width: 100%;
+    min-width: 640px;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.legal-table th,
+.legal-table td {
+    padding: 13px 16px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--color-border-light);
+    line-height: 1.6;
+}
+
+.legal-table thead th {
+    background: rgba(212, 175, 55, 0.08);
+    color: var(--color-gold);
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.legal-table tbody td {
+    color: var(--color-text-muted);
+}
+
+.legal-table tbody td:first-child {
+    color: var(--color-text);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.legal-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+@media (max-width: 640px) {
+    .legal {
+        padding: 50px 0 80px;
+    }
+
+    .legal-wrap h2 {
+        font-size: 21px;
+        margin-top: 38px;
+    }
+
+    .legal-intro {
+        font-size: 15.5px;
+        padding: 18px;
+    }
+}

@@ -557,4 +557,94 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/contact"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/contact"/>
   </url>
+  <url>
+    <loc>https://magicartfest.eu/politica-confidentialitate</loc>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/politica-confidentialitate"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/politica-privacidad"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/politica-confidentialitate"/>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://magicartfest.eu/en/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/politica-confidentialitate"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/politica-privacidad"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/politica-confidentialitate"/>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://magicartfest.eu/es/politica-privacidad</loc>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/politica-confidentialitate"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/politica-privacidad"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/politica-confidentialitate"/>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://magicartfest.eu/politica-cookies</loc>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/politica-cookies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/cookie-policy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/politica-cookies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/politica-cookies"/>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://magicartfest.eu/en/cookie-policy</loc>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/politica-cookies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/cookie-policy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/politica-cookies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/politica-cookies"/>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://magicartfest.eu/es/politica-cookies</loc>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/politica-cookies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/cookie-policy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/politica-cookies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/politica-cookies"/>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://magicartfest.eu/termeni-si-conditii</loc>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/termeni-si-conditii"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/terminos-y-condiciones"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/termeni-si-conditii"/>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://magicartfest.eu/en/terms-and-conditions</loc>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/termeni-si-conditii"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/terminos-y-condiciones"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/termeni-si-conditii"/>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://magicartfest.eu/es/terminos-y-condiciones</loc>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://magicartfest.eu/termeni-si-conditii"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://magicartfest.eu/en/terms-and-conditions"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://magicartfest.eu/es/terminos-y-condiciones"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://magicartfest.eu/termeni-si-conditii"/>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
