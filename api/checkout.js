@@ -13,6 +13,17 @@
 //   price_1U3JCOFnA2m4RznsRfUVEyBt = 149 EUR
 // Pachetul Dealer (189 EUR) NU are inca pret in Stripe: pana cand apare
 // STRIPE_PRICE_DEALER, inscrierea merge pe traseul "platesc mai tarziu".
+// Sume de rezerva, in eurocenti. Se folosesc DOAR daca pachetul nu are un
+// obiect Price in Stripe: atunci construim pretul pe loc, cu price_data.
+// Preturile create dinainte raman preferate, pentru ca reducerile din Stripe
+// (FISM10, UNDER18, fidelitate) pot fi legate de produsele respective.
+const AMOUNTS_EUR = {
+  Magician: 11900,
+  Competitor: 14900,
+  Dealer: 18900,
+  'Dealer Assistant': 11900,
+};
+
 const PRICE_119 = 'price_1U3JCOFnA2m4RznsZB6bLbmG';
 const PRICE_149 = 'price_1U3JCOFnA2m4RznsRfUVEyBt';
 
@@ -67,19 +78,23 @@ export default async function handler(req, res) {
   // formularul stie sa treaca pe "platesc mai tarziu" cand nu primeste url.
   // Asa nu pierdem un participant real doar pentru ca lipseste un id de pret.
   const price = PRICES[pkg];
-  if (!price) {
-    if (Object.prototype.hasOwnProperty.call(PRICES, pkg)) {
-      console.error('Pachet fara pret in Stripe, trimit spre plata ulterioara:', pkg);
-    } else {
-      console.error('Pachet necunoscut la checkout:', pkg);
-    }
+  const amount = AMOUNTS_EUR[pkg];
+  if (!price && !amount) {
+    console.error('Pachet necunoscut la checkout:', pkg);
     return res.status(200).json({ url: null, pay_later: true });
   }
 
   const paths = PATHS[lang];
   const params = new URLSearchParams();
   params.set('mode', 'payment');
-  params.set('line_items[0][price]', price);
+  if (price) {
+    params.set('line_items[0][price]', price);
+  } else {
+    // Pachet fara Price creat in Stripe: il construim aici, cu aceeasi suma.
+    params.set('line_items[0][price_data][currency]', 'eur');
+    params.set('line_items[0][price_data][unit_amount]', String(amount));
+    params.set('line_items[0][price_data][product_data][name]', `MagicArt Fest 2027 - pachet ${pkg}`);
+  }
   params.set('line_items[0][quantity]', '1');
   params.set('success_url', `${SITE}${paths.ok}?sid={CHECKOUT_SESSION_ID}`);
   params.set('cancel_url', `${SITE}${paths.back}?plata=anulata`);
