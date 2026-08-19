@@ -56,6 +56,8 @@ function csv(rows, columns) {
 
 const REG_COLS = ['id', 'created_at', 'first_name', 'last_name', 'country', 'whatsapp', 'email', 'package', 'accommodation', 'roommate', 'stage_name', 'magic_society', 'category', 'dealer_upgrade', 'store_name', 'website', 'comments', 'lang', 'payment_choice', 'paid_at', 'paid_amount', 'stripe_session_id'];
 const NL_COLS = ['id', 'created_at', 'email', 'consent', 'lang'];
+// Pachetele peste pretul de baza, evidentiate in tabel ('Full' e valoarea veche.)
+const GOLD_PACKAGES = ['Competitor', 'Dealer', 'Full'];
 
 const RO_DATE = new Intl.DateTimeFormat('ro-RO', { dateStyle: 'short', timeStyle: 'short', timeZone: 'Europe/Bucharest' });
 
@@ -65,7 +67,7 @@ function page(regs, subs) {
     <td><strong>${esc(r.first_name)} ${esc(r.last_name)}</strong><br><span class="dim">${esc(r.stage_name)}</span></td>
     <td>${esc(r.country)}</td>
     <td>${esc(r.email)}<br><span class="dim">${esc(r.whatsapp)}</span></td>
-    <td><span class="badge ${r.package === 'Full' ? 'gold' : ''}">${esc(r.package)}</span></td>
+    <td><span class="badge ${GOLD_PACKAGES.includes(r.package) ? 'gold' : ''}">${esc(r.package)}</span></td>
     <td>${r.paid_at
       ? `<span class="badge gold">Plătit</span>${r.paid_amount ? `<br><span class="dim">${esc(r.paid_amount)} EUR</span>` : ''}`
       : (r.payment_choice === 'later' ? 'Mai târziu' : 'În așteptare')}</td>

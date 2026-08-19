@@ -22,9 +22,25 @@ function isRateLimited(ip) {
 
 // --- Validare / sanitizare, fără dependențe externe ---
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-const PACKAGES = ['Full', 'Standard'];
+// Pachetele oferite in formular. Diferenta dintre ele e rolul, nu beneficiile:
+// toate includ acelasi lucru.
+const PACKAGES = ['Magician', 'Competitor', 'Dealer', 'Dealer Assistant'];
+// Inscrierile facute inainte de restructurare au in baza de date 'Standard' si
+// 'Full'. Nu le mai oferim in formular, dar le acceptam la validare (cine are
+// pagina veche in cache dupa deploy tot asta trimite) si le pastram in listele
+// de afisare, ca inscrierile vechi sa ramana lizibile.
+const LEGACY_PACKAGES = ['Standard', 'Full'];
+// Pretul fiecarui pachet, ca organizatorul sa il vada direct in email.
+const PACKAGE_PRICE_EUR = {
+  Magician: 119,
+  Competitor: 149,
+  Dealer: 189,
+  'Dealer Assistant': 119,
+  Standard: 119,
+  Full: 149,
+};
 const ACCOMMODATIONS = ['With accommodation', 'Without accommodation'];
-const CATEGORIES = ['Stage', 'Close-Up', 'None'];
+const CATEGORIES = ['Stage', 'Close-Up', 'Mentalism', 'None'];
 const PAYMENT_CHOICES = ['now', 'later'];
 
 // Ce scrie organizatorul in tabel si in email, nu ce trimite formularul.
@@ -42,6 +58,7 @@ const ACCOMMODATION_RO = {
 const CATEGORY_RO = {
   Stage: 'Stage Magic',
   'Close-Up': 'Close-Up Magic',
+  Mentalism: 'Mentalism',
   None: 'Nu particip',
 };
 
@@ -76,7 +93,9 @@ function validate(body) {
     return { error: 'Missing required fields' };
   }
   if (!EMAIL_RE.test(d.email)) return { error: 'Invalid email address' };
-  if (!PACKAGES.includes(d.package)) return { error: 'Invalid package' };
+  if (!PACKAGES.includes(d.package) && !LEGACY_PACKAGES.includes(d.package)) {
+    return { error: 'Invalid package' };
+  }
   if (!ACCOMMODATIONS.includes(d.accommodation)) return { error: 'Invalid accommodation option' };
   if (!CATEGORIES.includes(d.category)) return { error: 'Invalid category' };
   if (!PAYMENT_CHOICES.includes(d.payment_choice)) d.payment_choice = 'now';
@@ -124,7 +143,7 @@ async function notifyOrganizer(d) {
     `Țara: ${d.country}`,
     `WhatsApp: ${d.whatsapp}`,
     `Email: ${d.email}`,
-    `Pachet: ${d.package}`,
+    `Pachet: ${d.package}${PACKAGE_PRICE_EUR[d.package] ? ` (${PACKAGE_PRICE_EUR[d.package]} EUR)` : ''}`,
     `Cazare: ${d.accommodation}`,
     `Coleg de cameră: ${d.roommate || '-'}`,
     `Societate de magie: ${d.magic_society || '-'}`,

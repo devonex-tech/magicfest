@@ -121,19 +121,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ---- Câmpuri condiționale ----
-    const pkgInfoFull = document.getElementById('pkgInfoFull');
-    const pkgInfoStandard = document.getElementById('pkgInfoStandard');
+    // Cele patru pachete (Magician, Competitor, Dealer, Dealer Assistant) au
+    // exact aceleași beneficii, deci nu mai există o casetă de informații per
+    // pachet: e una singură, mereu vizibilă, scrisă direct în pagină.
     const roommateField = document.getElementById('roommateField');
     const roommateInput = form.querySelector('input[name="roommate"]');
     const dealerFields = document.getElementById('dealerFields');
     const storeInput = form.querySelector('input[name="store_name"]');
     const websiteInput = form.querySelector('input[name="website"]');
-
-    function updatePackageInfo() {
-        const isFull = radioValue('package') === 'Full';
-        if (pkgInfoFull) pkgInfoFull.classList.toggle('visible', isFull);
-        if (pkgInfoStandard) pkgInfoStandard.classList.toggle('visible', !isFull);
-    }
+    const DEALER_PACKAGES = ['Dealer', 'Dealer Assistant'];
 
     function updateAccommodation() {
         const withAcc = radioValue('accommodation') === 'With accommodation';
@@ -141,8 +137,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!withAcc && roommateInput) roommateInput.value = '';
     }
 
+    // Cine se inscrie pe pachet de Dealer sau Dealer Assistant are nevoie de
+    // campurile de magazin oricum, chiar daca nu bifeaza "upgrade dealer".
     function updateDealer() {
-        const isDealer = radioValue('dealer_upgrade') === 'Yes';
+        const isDealer =
+            radioValue('dealer_upgrade') === 'Yes' ||
+            DEALER_PACKAGES.indexOf(radioValue('package')) !== -1;
         if (dealerFields) dealerFields.classList.toggle('visible', isDealer);
         if (!isDealer) {
             if (storeInput) storeInput.value = '';
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('change', (e) => {
         const name = e.target.name;
-        if (name === 'package') updatePackageInfo();
+        if (name === 'package') updateDealer();
         else if (name === 'accommodation') updateAccommodation();
         else if (name === 'dealer_upgrade') updateDealer();
         else if (e.target === termsBox && termsBox.checked && termsError) {
@@ -161,7 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Inițializare după radio-urile checked
-    updatePackageInfo();
     updateAccommodation();
     updateDealer();
 

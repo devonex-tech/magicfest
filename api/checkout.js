@@ -6,9 +6,24 @@
 // si organizatorul poate lua legatura. Altfel am pierde un participant real
 // din cauza unui card refuzat.
 
+// Id-urile de pret din Stripe, pe pachet. Se pot suprascrie din variabile de
+// mediu (Vercel), ca sa nu fie nevoie de deploy cand organizatorul creeaza un
+// pret nou. Fallback-urile sunt preturile care exista deja in cont:
+//   price_1U3JCOFnA2m4RznsZB6bLbmG = 119 EUR
+//   price_1U3JCOFnA2m4RznsRfUVEyBt = 149 EUR
+// Pachetul Dealer (189 EUR) NU are inca pret in Stripe: pana cand apare
+// STRIPE_PRICE_DEALER, inscrierea merge pe traseul "platesc mai tarziu".
+const PRICE_119 = 'price_1U3JCOFnA2m4RznsZB6bLbmG';
+const PRICE_149 = 'price_1U3JCOFnA2m4RznsRfUVEyBt';
+
 const PRICES = {
-  Standard: 'price_1U3JCOFnA2m4RznsZB6bLbmG', // 119 EUR
-  Full: 'price_1U3JCOFnA2m4RznsRfUVEyBt', // 149 EUR
+  Magician: process.env.STRIPE_PRICE_MAGICIAN || PRICE_119, // 119 EUR
+  Competitor: process.env.STRIPE_PRICE_COMPETITOR || PRICE_149, // 149 EUR
+  Dealer: process.env.STRIPE_PRICE_DEALER || '', // 189 EUR - lipseste inca
+  'Dealer Assistant': process.env.STRIPE_PRICE_DEALER_ASSISTANT || PRICE_119, // 119 EUR
+  // Denumirile vechi, pentru cine are pagina veche in cache dupa deploy.
+  Standard: PRICE_119,
+  Full: PRICE_149,
 };
 
 const SITE = 'https://magicartfest.eu';
@@ -48,8 +63,18 @@ export default async function handler(req, res) {
   const name = clean(body.name, 200);
   const lang = ['ro', 'en', 'es'].includes(body.lang) ? body.lang : 'ro';
 
+  // Fara pret in Stripe nu inseamna eroare: inscrierea e deja salvata, iar
+  // formularul stie sa treaca pe "platesc mai tarziu" cand nu primeste url.
+  // Asa nu pierdem un participant real doar pentru ca lipseste un id de pret.
   const price = PRICES[pkg];
-  if (!price) return res.status(400).json({ error: 'Invalid package' });
+  if (!price) {
+    if (Object.prototype.hasOwnProperty.call(PRICES, pkg)) {
+      console.error('Pachet fara pret in Stripe, trimit spre plata ulterioara:', pkg);
+    } else {
+      console.error('Pachet necunoscut la checkout:', pkg);
+    }
+    return res.status(200).json({ url: null, pay_later: true });
+  }
 
   const paths = PATHS[lang];
   const params = new URLSearchParams();

@@ -392,9 +392,19 @@ html {
 
 .package-name {
     font-family: var(--font-display);
-    font-size: 34px;
+    font-size: clamp(26px, 3.4vw, 34px);
+    line-height: 1.15;
     letter-spacing: 2px;
     color: var(--color-gold);
+}
+
+/* Rolul din spatele pachetului (magician, concurent, dealer, asistent).
+   Pachetele au aceleasi beneficii, deci linia asta e singura care le separa. */
+.package-role {
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--color-text-dim);
+    margin-top: 8px;
 }
 
 .package-includes-label {
@@ -402,7 +412,7 @@ html {
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--color-text-dim);
-    margin: 8px 0 20px;
+    margin: 16px 0 20px;
 }
 
 .package-price {
@@ -633,6 +643,16 @@ html {
     font-size: 14px;
     font-weight: 500;
     transition: all var(--transition-fast);
+}
+
+/* Pretul din butonul de pachet: pe randul lui, ca sa incapa si pe telefon. */
+.radio-card span em {
+    display: block;
+    margin-top: 5px;
+    font-style: normal;
+    font-size: 12px;
+    letter-spacing: 1px;
+    opacity: .75;
 }
 
 .radio-card input:checked + span {
