@@ -573,6 +573,10 @@ ul {
     background: var(--color-gold);
 }
 
+.hero-info-gala {
+    margin-top: -32px;
+}
+
 .hero-buttons {
     display: flex;
     gap: 16px;
