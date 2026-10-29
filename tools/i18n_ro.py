@@ -150,7 +150,7 @@ T = {
 
     "register": {
         "title": "Înscriere Participanți - MagicArt Fest 2027",
-        "description": "Înscrie-te la MagicArt Fest 2027: pachete Standard și Full pentru magicieni, competiție FISM, gala show, lectures și zona dealerilor.",
+        "description": "Înscrie-te la MagicArt Fest 2027: pachete Standard și Full pentru magicieni, competiție FISM, gala show, lectures și dealers' area.",
         "hero_tag": "Participanți 2027",
         "hero_title": "Înscriere la Festival",
         "hero_sub": "Alege pachetul potrivit și completează formularul de înscriere. Locurile sunt limitate!",
