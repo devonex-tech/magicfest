@@ -56,7 +56,7 @@ T = {
 
         "guests_tag": "Our Guests",
         "guests_title": 'Guest of Honor at <span class="accent">MagicArt Fest 2027</span>',
-        "guests_desc": "We are preparing an exceptional lineup. The names of our guests of honor will be announced soon - stay tuned!",
+        "guests_desc": "Our first confirmed guest is Alain Simonov, FISM LACM 2022 General Magic winner. He will perform in the Gala Show and give a lecture. The rest of our guests of honor will be announced soon.",
         "jury_tag": "The Jury",
         "jury_title": 'International Jury - <span class="accent">2027 Edition</span>',
         "jury_desc": "A prestigious international jury will judge the competition acts. The lineup will be announced soon.",

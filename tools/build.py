@@ -34,6 +34,10 @@ GUESTS_2026 = [
     {"img": "eduard-bianca.png", "name": "Eduard și Bianca", "country": "🇷🇴 România", "country_en": "🇷🇴 Romania", "country_es": "🇷🇴 Rumanía", "role": "gala"},
 ]
 
+GUESTS_2027 = [
+    {"img": "alain-simonov.webp", "name": "Alain Simonov", "title": "FISM LACM General Magic 2022", "role": "lecture_gala"},
+]
+
 JURY_2026 = [
     {"img": "xavier-tapias.png", "name": "Xavier Tapias", "country": "🇪🇸", "role": "tapias"},
     {"img": "serge-odin.png", "name": "Serge Odin", "country": "🇫🇷", "role": "odin"},
@@ -355,6 +359,21 @@ def silhouette_card(t, label):
                     </div>'''
 
 
+def guest_card(t, item):
+    g = t["e2026"]["guests"]
+    role = g["role_lecture_gala"] if item["role"] == "lecture_gala" else g["role_gala"]
+    return f'''                    <div class="artist-photo-card">
+                        <div class="artist-photo">
+                            <img src="/images/{item["img"]}" alt="{item["name"]}" width="130" height="130" loading="lazy">
+                        </div>
+                        <div class="artist-photo-info">
+                            <span class="artist-name">{item["name"]}</span>
+                            <span class="artist-country">{item["title"]}</span>
+                            <span class="tba-badge">{role}</span>
+                        </div>
+                    </div>'''
+
+
 # ============================================================ PAGES
 
 def page_index(t):
@@ -389,7 +408,9 @@ def page_index(t):
 
     marquee_spans = "\n".join(f'                <span>✦ {w}</span>' for w in (h["marquee"] * 2))
 
-    silhouettes_guests = "\n".join(silhouette_card(t, None) for _ in range(4))
+    silhouettes_guests = "\n".join(
+        [guest_card(t, item) for item in GUESTS_2027]
+        + [silhouette_card(t, None) for _ in range(max(0, 4 - len(GUESTS_2027)))])
     silhouettes_jury = "\n".join(silhouette_card(t, None) for _ in range(4))
 
     edition_cards = "\n".join(
