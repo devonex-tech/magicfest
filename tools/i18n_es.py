@@ -56,7 +56,7 @@ T = {
 
         "guests_tag": "Nuestros Invitados",
         "guests_title": 'Guest of Honor at <span class="accent">MagicArt Fest 2027</span>',
-        "guests_desc": "Nuestro primer invitado confirmado es Alain Simonov, ganador de FISM LACM 2022 en General Magic. Actuará en la Gala Show y ofrecerá una lecture. El resto de los invitados de honor se anunciará muy pronto.",
+        "guests_desc": "Alain Simonov, ganador de FISM LACM 2022 en General Magic, es el primer invitado confirmado de esta edición. Lo verás en el escenario de la Gala Show, y los magos inscritos podrán aprender directamente de él en su conferencia. El resto de los invitados de honor se anunciará muy pronto.",
         "jury_tag": "El Jurado",
         "jury_title": 'International Jury - <span class="accent">2027 Edition</span>',
         "jury_desc": "Un prestigioso jurado internacional evaluará los números de la competición. La composición se anunciará pronto.",
