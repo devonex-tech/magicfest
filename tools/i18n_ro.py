@@ -55,10 +55,10 @@ T = {
         ],
 
         "guests_tag": "Invitații Noștri",
-        "guests_title": 'Guest of Honor at <span class="accent">MagicArt Fest 2027</span>',
+        "guests_title": 'Invitați de onoare la <span class="accent">MagicArt Fest 2027</span>',
         "guests_desc": "Primul invitat confirmat al ediției este Alain Simonov, câștigătorul FISM LACM 2022 la General Magic. Va fi în spectacolul de gală și va ține o conferință pentru magicieni. Ceilalți invitați vor fi anunțați în curând.",
         "jury_tag": "Juriul",
-        "jury_title": 'International Jury - <span class="accent">2027 Edition</span>',
+        "jury_title": 'Juriul internațional al <span class="accent">ediției 2027</span>',
         "jury_desc": "Un juriu internațional de prestigiu va evalua actele din competiție. Componența va fi anunțată în curând.",
         "tba": "Se anunță în curând",
         "tba_badge": "Coming Soon",
@@ -150,7 +150,7 @@ T = {
 
     "register": {
         "title": "Înscriere Participanți - MagicArt Fest 2027",
-        "description": "Înscrie-te la MagicArt Fest 2027: pachete Standard și Full pentru magicieni, competiție FISM, gala show, lectures și dealers' area.",
+        "description": "Înscrie-te la MagicArt Fest 2027: pachete Standard și Full pentru magicieni, competiție FISM, gala show, lectures și zona dealerilor.",
         "hero_tag": "Participanți 2027",
         "hero_title": "Înscriere la Festival",
         "hero_sub": "Alege pachetul potrivit și completează formularul de înscriere. Locurile sunt limitate!",
@@ -286,7 +286,7 @@ T = {
             "hero_tag": "Ediția 2026",
             "hero_title": "Invitați de Onoare 2026",
             "hero_sub": "Artiștii internaționali care au făcut din ediția 2026 un spectacol de neuitat.",
-            "role_lecture_gala": "Lecture & Gala Show",
+            "role_lecture_gala": "Conferință și Gala Show",
             "role_gala": "Gala Show",
         },
         "jury": {
