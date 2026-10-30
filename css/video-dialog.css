@@ -1,0 +1,76 @@
+.lecturer-trailer {
+    position: relative;
+    display: block;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    appearance: none;
+}
+
+.lecturer-trailer:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 4px;
+}
+
+.lecturer-trailer .play-badge {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.35);
+    color: var(--color-gold);
+    transition: background 0.3s ease;
+}
+
+.lecturer-trailer:hover .play-badge,
+.lecturer-trailer:focus-visible .play-badge {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.video-dialog {
+    margin: auto;
+    width: min(960px, 92vw);
+    padding: 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    background: #000;
+    overflow: visible;
+}
+
+.video-dialog::backdrop {
+    background: rgba(5, 5, 10, 0.88);
+}
+
+.video-dialog video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    border-radius: inherit;
+    background: #000;
+}
+
+.video-dialog-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    background: rgba(10, 10, 14, 0.75);
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+.video-dialog-close:hover,
+.video-dialog-close:focus-visible {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+}
